@@ -212,6 +212,13 @@
             transition: width 0.3s ease;
         }
 
+        /* ===== NEWLINE SUPPORT ===== */
+        .question-text,
+        .revisor-q,
+        .option > div:last-child {
+            white-space: pre-wrap;
+        }
+
         .question-text {
             font-size: 16px;
             font-weight: 700;
@@ -230,6 +237,7 @@
             overflow-x: auto;
             margin: 10px 0 0;
             line-height: 1.5;
+            white-space: pre; /* keep code formatting intact */
         }
 
         .options {
@@ -303,6 +311,7 @@
             font-weight: 700;
             font-size: 14px;
             color: #475569;
+            white-space: normal; /* keep label compact */
         }
 
         .feedback {
