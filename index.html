@@ -238,6 +238,7 @@
             transition: width 0.3s ease;
         }
 
+        /* Preserve newlines, but don't interpret HTML */
         .question-text,
         .revisor-q,
         .revisor-answer,
@@ -642,7 +643,7 @@
 <body>
 
     <!-- VERSION BADGE -->
-    <div class="version-badge">v1.2.0</div>
+    <div class="version-badge">v1.3.0</div>
 
     <div class="container">
         <!-- HEADER -->
@@ -880,7 +881,7 @@
                 grid.appendChild(chip);
             });
 
-            // Detailed review
+            // Detailed review – build safely
             const reviewContainer = document.getElementById('detailedReview');
             reviewContainer.innerHTML = '';
             week.questions.forEach((q, idx) => {
@@ -893,38 +894,62 @@
                 const item = document.createElement('div');
                 item.className = 'revisor-item';
 
-                let qHtml = `<span class="num">${idx + 1}.</span>${q.text}`;
+                // Question
+                const qDiv = document.createElement('div');
+                qDiv.className = 'revisor-q';
+                const numSpan = document.createElement('span');
+                numSpan.className = 'num';
+                numSpan.textContent = `${idx+1}.`;
+                qDiv.appendChild(numSpan);
+                const qTextNode = document.createTextNode(q.text);
+                qDiv.appendChild(qTextNode);
+                item.appendChild(qDiv);
 
-                let userAnswerHtml = '';
+                // Container for answers
+                const answersWrapper = document.createElement('div');
+                answersWrapper.style.marginTop = '6px';
+
+                // Your answer
+                const yourLabel = document.createElement('div');
+                yourLabel.style.cssText = 'font-size:13px; font-weight:600; color:var(--muted);';
+                yourLabel.textContent = 'Your answer:';
+                answersWrapper.appendChild(yourLabel);
+
+                const userAnswerDiv = document.createElement('div');
                 if (userIdx >= 0) {
-                    const userOpt = q.options[userIdx];
-                    userAnswerHtml = `
-                        <div class="revisor-answer ${isCorrect ? 'correct-answer' : 'wrong-answer'}">
-                            <span class="label">${userLetter}</span>
-                            <span>${userOpt.text} ${isCorrect ? '✅' : '❌'}</span>
-                        </div>
-                    `;
+                    const opt = q.options[userIdx];
+                    userAnswerDiv.className = `revisor-answer ${isCorrect ? 'correct-answer' : 'wrong-answer'}`;
+                    const lbl = document.createElement('span');
+                    lbl.className = 'label';
+                    lbl.textContent = userLetter;
+                    userAnswerDiv.appendChild(lbl);
+                    const txt = document.createTextNode(opt.text + ' ' + (isCorrect ? '✅' : '❌'));
+                    userAnswerDiv.appendChild(txt);
                 } else {
-                    userAnswerHtml = `<div class="revisor-answer" style="background:var(--border);">Not answered</div>`;
+                    userAnswerDiv.className = 'revisor-answer';
+                    userAnswerDiv.style.background = 'var(--border)';
+                    userAnswerDiv.textContent = 'Not answered';
                 }
+                answersWrapper.appendChild(userAnswerDiv);
 
+                // Correct answer
+                const correctLabel = document.createElement('div');
+                correctLabel.style.cssText = 'font-size:13px; font-weight:600; color:var(--muted); margin-top:6px;';
+                correctLabel.textContent = 'Correct answer:';
+                answersWrapper.appendChild(correctLabel);
+
+                const correctAnswerDiv = document.createElement('div');
+                correctAnswerDiv.className = 'revisor-answer correct-answer';
+                const lblCorr = document.createElement('span');
+                lblCorr.className = 'label';
+                lblCorr.textContent = correctLetter;
+                correctAnswerDiv.appendChild(lblCorr);
                 const correctOpt = q.options[correctIdx];
-                const correctHtml = `
-                    <div class="revisor-answer correct-answer">
-                        <span class="label">${correctLetter}</span>
-                        <span>${correctOpt.text} (correct)</span>
-                    </div>
-                `;
+                const corrText = document.createTextNode(correctOpt.text + ' (correct)');
+                correctAnswerDiv.appendChild(corrText);
+                answersWrapper.appendChild(correctAnswerDiv);
 
-                item.innerHTML = `
-                    <div class="revisor-q">${qHtml}</div>
-                    <div style="margin-top:6px;">
-                        <div style="font-size:13px; font-weight:600; color:var(--muted);">Your answer:</div>
-                        ${userAnswerHtml}
-                        <div style="font-size:13px; font-weight:600; color:var(--muted); margin-top:6px;">Correct answer:</div>
-                        ${correctHtml}
-                    </div>
-                `;
+                item.appendChild(answersWrapper);
                 reviewContainer.appendChild(item);
             });
 
@@ -978,18 +1003,32 @@
                 const item = document.createElement('div');
                 item.className = 'revisor-item';
 
-                let qHtml = `<span class="num">${idx + 1}.</span>${q.text}`;
-                const correctOpt = q.options.find(o => o.id === q.correct_option_id);
+                // Question
+                const qDiv = document.createElement('div');
+                qDiv.className = 'revisor-q';
+                const numSpan = document.createElement('span');
+                numSpan.className = 'num';
+                numSpan.textContent = `${idx+1}.`;
+                qDiv.appendChild(numSpan);
+                const qTextNode = document.createTextNode(q.text);
+                qDiv.appendChild(qTextNode);
+                item.appendChild(qDiv);
+
+                // Correct answer
                 const correctIdx = q.options.findIndex(o => o.id === q.correct_option_id);
                 const letter = String.fromCharCode(65 + correctIdx);
+                const correctOpt = q.options[correctIdx];
 
-                item.innerHTML = `
-                    <div class="revisor-q">${qHtml}</div>
-                    <div class="revisor-answer correct-answer">
-                        <span class="label">${letter}</span>
-                        <span>${correctOpt ? correctOpt.text : '—'}</span>
-                    </div>
-                `;
+                const ansDiv = document.createElement('div');
+                ansDiv.className = 'revisor-answer correct-answer';
+                const lbl = document.createElement('span');
+                lbl.className = 'label';
+                lbl.textContent = letter;
+                ansDiv.appendChild(lbl);
+                const txt = document.createTextNode(correctOpt ? correctOpt.text : '—');
+                ansDiv.appendChild(txt);
+                item.appendChild(ansDiv);
+
                 list.appendChild(item);
             });
 
@@ -1018,8 +1057,18 @@
             q.options.forEach((opt, idx) => {
                 const div = document.createElement('div');
                 div.className = 'option';
-                div.innerHTML =
-                    `<div class="label">${String.fromCharCode(65 + idx)}</div><div>${opt.text}</div>`;
+
+                // Label
+                const lbl = document.createElement('div');
+                lbl.className = 'label';
+                lbl.textContent = String.fromCharCode(65 + idx);
+                div.appendChild(lbl);
+
+                // Text – safe with textContent
+                const textDiv = document.createElement('div');
+                textDiv.textContent = opt.text;
+                div.appendChild(textDiv);
+
                 div.onclick = () => selectOption(idx);
                 optBox.appendChild(div);
             });
