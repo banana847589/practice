@@ -43,32 +43,67 @@
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: #fff;
             border-radius: 20px;
-            padding: 28px 22px;
+            padding: 20px 22px;
             margin-bottom: 24px;
             box-shadow: 0 6px 20px rgba(26, 115, 232, 0.25);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .header h1 {
-            font-size: 28px;
-            margin: 0 0 4px;
+        .header-left {
+            flex: 1;
+        }
+
+        .header-left h1 {
+            font-size: 24px;
+            margin: 0 0 2px;
             font-weight: 700;
         }
 
-        .header .subtitle {
-            font-size: 15px;
+        .header-left .subtitle {
+            font-size: 14px;
             opacity: 0.95;
             margin: 0;
         }
 
-        .header .total-badge {
-            display: inline-block;
-            margin-top: 10px;
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .total-badge {
             background: rgba(255, 255, 255, 0.2);
             padding: 4px 14px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 600;
             backdrop-filter: blur(4px);
+            white-space: nowrap;
+        }
+
+        .redo-btn {
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .redo-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.02);
         }
 
         .weeks-nav {
@@ -336,10 +371,12 @@
             display: flex;
             gap: 10px;
             margin-top: 16px;
+            flex-wrap: wrap;
         }
 
         .btn-row .btn {
             flex: 1;
+            min-width: 100px;
         }
 
         .hide {
@@ -474,22 +511,42 @@
 
         .revisor-answer {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 8px;
             font-size: 13px;
             font-weight: 600;
-            color: var(--success);
-            background: var(--success-bg);
+            padding: 6px 12px;
             border-radius: 8px;
-            padding: 8px 12px;
+            margin-top: 4px;
         }
 
         .revisor-answer .label {
             flex: 0 0 24px;
             height: 24px;
-            background: var(--success);
-            color: #fff;
             border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .revisor-answer.correct-answer .label {
+            background: var(--success);
+        }
+
+        .revisor-answer.wrong-answer .label {
+            background: var(--error);
+        }
+
+        .revisor-answer.user-answer {
+            background: var(--error-bg);
+            border-left: 4px solid var(--error);
+        }
+
+        .revisor-answer.correct-answer {
+            background: var(--success-bg);
+            border-left: 4px solid var(--success);
         }
 
         .done-screen {
@@ -514,9 +571,32 @@
             margin-bottom: 24px;
         }
 
+        .review-detail {
+            margin-top: 20px;
+            border-top: 2px solid var(--border);
+            padding-top: 20px;
+        }
+
+        .review-detail h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
         @media (max-width: 480px) {
-            .header h1 {
-                font-size: 24px;
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .header-right {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .header-left h1 {
+                font-size: 20px;
             }
 
             .quiz-meta {
@@ -530,6 +610,12 @@
             .percentage {
                 font-size: 28px;
             }
+
+            .btn-row .btn {
+                min-width: 80px;
+                font-size: 13px;
+                padding: 12px 10px;
+            }
         }
     </style>
 </head>
@@ -537,9 +623,14 @@
     <div class="container">
         <!-- HEADER -->
         <div class="header">
-            <h1>📚 Interactive Quiz</h1>
-            <p class="subtitle" id="headerSubtitle">Loading quiz data...</p>
-            <span class="total-badge" id="totalBadge">📝 Total: —</span>
+            <div class="header-left">
+                <h1>📚 Interactive Quiz</h1>
+                <p class="subtitle" id="headerSubtitle">Loading quiz data...</p>
+            </div>
+            <div class="header-right">
+                <span class="total-badge" id="totalBadge">📝 Total: —</span>
+                <button class="redo-btn" id="redoHeaderBtn" onclick="redoQuiz()">🔄 Redo</button>
+            </div>
         </div>
 
         <!-- WEEKS NAV -->
@@ -582,9 +673,17 @@
                 <span class="stat-wrong" id="wrongCount"></span>
             </div>
             <div class="chip-grid" id="chipGrid"></div>
+
+            <!-- Detailed answer review -->
+            <div class="review-detail" id="detailedReviewContainer">
+                <h3>📝 Detailed Review</h3>
+                <div class="revisor-list" id="detailedReview"></div>
+            </div>
+
             <div class="btn-row">
                 <button class="btn btn-ghost" onclick="openRevisor()">📖 Review</button>
                 <button class="btn" id="nextWeekBtn" onclick="goNextWeek()">➡️ Next Week</button>
+                <button class="btn" onclick="redoQuiz()">🔄 Redo Quiz</button>
             </div>
         </div>
 
@@ -614,7 +713,8 @@
         let score = 0;
         let selectedAnswer = -1;
         let submitted = false;
-        let answers = [];
+        let answers = []; // boolean for each question (correct/incorrect)
+        let userAnswers = []; // index of selected option for each question
 
         // ─── LOAD ──────────────────────────────────────────────────────────
         async function loadQuizData() {
@@ -623,9 +723,8 @@
                 if (!response.ok) throw new Error('Failed to load quiz data');
                 quizData = await response.json();
 
-                // Show total questions from metadata
                 const total = quizData.metadata?.total_questions ?? '—';
-                document.getElementById('totalBadge').textContent = `📝 Total: ${total} questions`;
+                document.getElementById('totalBadge').textContent = `📝 Total: ${total}`;
 
                 initWeekButtons();
                 showWelcome();
@@ -652,7 +751,6 @@
 
         function selectWeek(idx) {
             currentWeekIdx = idx;
-            // update active class
             document.querySelectorAll('.week-btn').forEach((btn, i) => {
                 btn.classList.toggle('active', i === idx);
                 btn.classList.remove('done');
@@ -661,7 +759,6 @@
             showWelcome();
         }
 
-        // highlight current week in nav
         function highlightCurrentWeek() {
             document.querySelectorAll('.week-btn').forEach((btn, i) => {
                 btn.classList.toggle('active', i === currentWeekIdx);
@@ -696,12 +793,22 @@
             selectedAnswer = -1;
             submitted = false;
             answers = [];
+            userAnswers = [];
             hideAll();
             document.getElementById('quizScreen').classList.remove('hide');
             renderQuestion();
             highlightCurrentWeek();
         }
 
+        // ─── REDO QUIZ (always visible via header button) ──────────────
+        function redoQuiz() {
+            if (!quizData) return;
+            // If we're on done screen, go to week 0 first? But better to redo current week.
+            // If done screen, we can still redo the last week.
+            startQuiz();
+        }
+
+        // ─── RESULTS ──────────────────────────────────────────────────────
         function showResults() {
             hideAll();
             document.getElementById('resultsScreen').classList.remove('hide');
@@ -720,6 +827,7 @@
             document.getElementById('correctCount').textContent = `✅ Correct: ${score}`;
             document.getElementById('wrongCount').textContent = `❌ Wrong: ${total - score}`;
 
+            // Chips
             const grid = document.getElementById('chipGrid');
             grid.innerHTML = '';
             answers.forEach((isCorrect, idx) => {
@@ -729,7 +837,57 @@
                 grid.appendChild(chip);
             });
 
-            // Decide button text: "Next Week" or "That's it!"
+            // Detailed review
+            const reviewContainer = document.getElementById('detailedReview');
+            reviewContainer.innerHTML = '';
+            week.questions.forEach((q, idx) => {
+                const userIdx = userAnswers[idx] !== undefined ? userAnswers[idx] : -1;
+                const correctIdx = q.options.findIndex(o => o.id === q.correct_option_id);
+                const userLetter = userIdx >= 0 ? String.fromCharCode(65 + userIdx) : '—';
+                const correctLetter = String.fromCharCode(65 + correctIdx);
+                const isCorrect = userIdx === correctIdx;
+
+                const item = document.createElement('div');
+                item.className = 'revisor-item';
+
+                let qHtml = `<span class="num">${idx + 1}.</span>${q.text}`;
+
+                // User's answer
+                let userAnswerHtml = '';
+                if (userIdx >= 0) {
+                    const userOpt = q.options[userIdx];
+                    userAnswerHtml = `
+                        <div class="revisor-answer ${isCorrect ? 'correct-answer' : 'wrong-answer'}">
+                            <span class="label">${userLetter}</span>
+                            <span>${userOpt.text} ${isCorrect ? '✅' : '❌'}</span>
+                        </div>
+                    `;
+                } else {
+                    userAnswerHtml = `<div class="revisor-answer" style="background:#f0f0f0;">Not answered</div>`;
+                }
+
+                // Correct answer (always shown)
+                const correctOpt = q.options[correctIdx];
+                const correctHtml = `
+                    <div class="revisor-answer correct-answer">
+                        <span class="label">${correctLetter}</span>
+                        <span>${correctOpt.text} (correct)</span>
+                    </div>
+                `;
+
+                item.innerHTML = `
+                    <div class="revisor-q">${qHtml}</div>
+                    <div style="margin-top:6px;">
+                        <div style="font-size:13px; font-weight:600; color:var(--muted);">Your answer:</div>
+                        ${userAnswerHtml}
+                        <div style="font-size:13px; font-weight:600; color:var(--muted); margin-top:6px;">Correct answer:</div>
+                        ${correctHtml}
+                    </div>
+                `;
+                reviewContainer.appendChild(item);
+            });
+
+            // Next week button
             const isLast = currentWeekIdx === quizData.data.length - 1;
             const btn = document.getElementById('nextWeekBtn');
             if (isLast) {
@@ -754,7 +912,6 @@
         function goNextWeek() {
             if (currentWeekIdx < quizData.data.length - 1) {
                 currentWeekIdx++;
-                // mark previous as done? optional
                 startQuiz();
             } else {
                 showDoneScreen();
@@ -787,12 +944,12 @@
                 const letter = String.fromCharCode(65 + correctIdx);
 
                 item.innerHTML = `
-              <div class="revisor-q">${qHtml}</div>
-              <div class="revisor-answer">
-                <span class="label">${letter}</span>
-                <span>${correctOpt ? correctOpt.text : '—'}</span>
-              </div>
-            `;
+                    <div class="revisor-q">${qHtml}</div>
+                    <div class="revisor-answer correct-answer">
+                        <span class="label">${letter}</span>
+                        <span>${correctOpt ? correctOpt.text : '—'}</span>
+                    </div>
+                `;
                 list.appendChild(item);
             });
 
@@ -850,6 +1007,7 @@
                 const isCorrect = selectedAnswer === correctIdx;
 
                 answers.push(isCorrect);
+                userAnswers.push(selectedAnswer);
                 if (isCorrect) score++;
                 submitted = true;
 
