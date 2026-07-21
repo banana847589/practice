@@ -1,1 +1,388 @@
-aaa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a73e8">
+  <title>DECI Quiz Viewer – All Weeks</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      padding: 20px 14px 30px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .header {
+      background: #1a73e8;
+      color: #fff;
+      border-radius: 20px;
+      padding: 24px 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 20px rgba(26,115,232,0.25);
+    }
+    .header h1 {
+      font-size: 28px;
+      margin: 0 0 6px;
+      font-weight: 700;
+    }
+    .header .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      font-size: 15px;
+      opacity: 0.9;
+      margin-top: 8px;
+    }
+    .header .meta span {
+      background: rgba(255,255,255,0.15);
+      padding: 4px 14px;
+      border-radius: 30px;
+    }
+
+    /* week selector */
+    .week-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .week-btn {
+      background: #e8ecf3;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #2c3e50;
+      cursor: pointer;
+      transition: all 0.1s;
+      flex: 0 0 auto;
+    }
+    .week-btn:hover {
+      background: #d0d8e6;
+    }
+    .week-btn.active {
+      background: #1a73e8;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(26,115,232,0.3);
+    }
+
+    /* card */
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px 20px 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid #e9edf4;
+      margin-bottom: 20px;
+    }
+    .week-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .week-sub {
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .week-sub span {
+      background: #f0f2f6;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .question-item {
+      border-top: 1px solid #edf2f7;
+      padding: 18px 0 14px;
+    }
+    .question-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+    .q-text {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .q-text .num {
+      color: #1a73e8;
+      margin-right: 6px;
+    }
+    .q-text pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-family: ui-monospace, "SF Mono", Consolas, Menlo, monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin: 8px 0 0;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 8px 0 10px;
+    }
+    .opt {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid #e9edf4;
+      font-size: 14.5px;
+      line-height: 1.4;
+    }
+    .opt .lbl {
+      flex: 0 0 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: #475569;
+    }
+    .opt.correct {
+      background: #e7f6ec;
+      border-color: #2e9e4f;
+    }
+    .opt.correct .lbl {
+      background: #2e9e4f;
+      color: #fff;
+    }
+    .answer-reveal {
+      margin-top: 8px;
+    }
+    .btn-reveal {
+      background: none;
+      border: 1px solid #d0d8e6;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a73e8;
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+    .btn-reveal:hover {
+      background: #eef3fe;
+    }
+    .answer-text {
+      display: none;
+      margin-top: 8px;
+      background: #e7f6ec;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #1e7b3e;
+      font-size: 14px;
+    }
+    .answer-text.show {
+      display: block;
+    }
+
+    .footer {
+      text-align: center;
+      color: #9aa3b5;
+      font-size: 13px;
+      padding: 16px 0 6px;
+    }
+    .footer a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .header h1 { font-size: 22px; }
+      .week-title { font-size: 19px; }
+      .q-text { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container" id="app">
+  <header class="header" id="header">
+    <h1>📚 DECI Quiz Viewer</h1>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <div class="week-nav" id="weekNav"></div>
+
+  <div id="weekContent">
+    <!-- rendered by JS -->
+  </div>
+
+  <div class="footer">
+    Data extracted from DECI platform · GitHub Pages · <span id="footerDate"></span>
+  </div>
+</div>
+
+<script>
+// ─── Load JSON ──────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const resp = await fetch('quizzes_with_answers.json');
+    if (!resp.ok) throw new Error('Failed to load JSON');
+    const json = await resp.json();
+    return json;
+  } catch (err) {
+    document.getElementById('weekContent').innerHTML = `
+      <div class="card" style="text-align:center;padding:40px 20px;">
+        <p style="font-size:18px;font-weight:600;">❌ Could not load data</p>
+        <p style="color:#6b7280;">Make sure <code>quizzes_with_answers.json</code> is in the same folder.</p>
+      </div>
+    `;
+    console.error(err);
+    return null;
+  }
+}
+
+// ─── Render ──────────────────────────────────────────────────────
+function render(data) {
+  const meta = data.metadata;
+  const weeks = data.data;
+
+  // Header
+  document.getElementById('meta').innerHTML = `
+    <span>📊 Total: ${meta.total_questions} questions</span>
+    <span>🕒 Updated: ${meta.last_updated}</span>
+    <span>📅 Weeks: ${weeks.length}</span>
+  `;
+
+  // Week navigation
+  const nav = document.getElementById('weekNav');
+  nav.innerHTML = '';
+  weeks.forEach((w, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'week-btn' + (idx === 0 ? ' active' : '');
+    btn.textContent = `W${w.global_week}`;
+    btn.dataset.idx = idx;
+    btn.onclick = () => selectWeek(idx);
+    nav.appendChild(btn);
+  });
+
+  // Show first week
+  if (weeks.length) selectWeek(0);
+}
+
+function selectWeek(idx) {
+  const weeks = window._weeks;
+  if (!weeks) return;
+
+  // Update nav
+  document.querySelectorAll('.week-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', i === idx);
+  });
+
+  const w = weeks[idx];
+  const container = document.getElementById('weekContent');
+
+  let html = `
+    <div class="card">
+      <div class="week-title">${w.name}</div>
+      <div class="week-sub">
+        <span>🌍 Week ${w.global_week}</span>
+        <span>📆 Month ${w.month} · Week ${w.week}</span>
+        <span>📝 ${w.question_count} questions</span>
+      </div>
+  `;
+
+  w.questions.forEach((q, i) => {
+    const qNum = i + 1;
+    let qText = q.text;
+    // optional code block (if any) – not in current data but ready
+    const codeMatch = qText.match(/```([\s\S]*?)```/);
+    let cleanText = qText;
+    let codeHtml = '';
+    if (codeMatch) {
+      cleanText = qText.replace(/```[\s\S]*?```/, '').trim();
+      codeHtml = `<pre>${codeMatch[1].trim()}</pre>`;
+    }
+    const letters = ['A', 'B', 'C', 'D', 'E'];
+    html += `
+      <div class="question-item">
+        <div class="q-text">
+          <span class="num">${qNum}.</span> ${cleanText}
+          ${codeHtml}
+        </div>
+        <div class="options">
+    `;
+    q.options.forEach((opt, oi) => {
+      const isCorrect = (opt.id === q.correct_option_id);
+      const cls = isCorrect ? 'opt correct' : 'opt';
+      html += `
+        <div class="${cls}">
+          <span class="lbl">${letters[oi]}</span>
+          <span>${opt.text}</span>
+        </div>
+      `;
+    });
+    html += `
+        </div>
+        <div class="answer-reveal">
+          <button class="btn-reveal" onclick="toggleAnswer(this)">📖 Show correct answer</button>
+          <div class="answer-text">
+            ✅ Correct: ${q.options.find(o => o.id === q.correct_option_id)?.text || ''}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
+  container.innerHTML = html;
+
+  // footer date
+  document.getElementById('footerDate').textContent = new Date().toLocaleDateString();
+}
+
+function toggleAnswer(btn) {
+  const parent = btn.parentElement;
+  const answerDiv = parent.querySelector('.answer-text');
+  const isShowing = answerDiv.classList.contains('show');
+  if (isShowing) {
+    answerDiv.classList.remove('show');
+    btn.textContent = '📖 Show correct answer';
+  } else {
+    answerDiv.classList.add('show');
+    btn.textContent = '🙈 Hide correct answer';
+  }
+}
+
+// ─── Init ──────────────────────────────────────────────────────
+(async function init() {
+  const data = await loadData();
+  if (!data) return;
+  window._weeks = data.data;
+  render(data);
+})();
+</script>
+</body>
+</html>
