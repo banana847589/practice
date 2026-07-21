@@ -215,6 +215,7 @@
         /* ===== NEWLINE SUPPORT ===== */
         .question-text,
         .revisor-q,
+        .revisor-answer,
         .option > div:last-child {
             white-space: pre-wrap;
         }
@@ -516,6 +517,7 @@
             overflow-x: auto;
             margin: 8px 0 0;
             line-height: 1.5;
+            white-space: pre;
         }
 
         .revisor-answer {
@@ -592,6 +594,25 @@
             color: var(--primary);
         }
 
+        /* ===== VERSION BADGE ===== */
+        .version-badge {
+            position: fixed;
+            bottom: 16px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            user-select: none;
+            z-index: 999;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
         @media (max-width: 480px) {
             .header {
                 flex-direction: column;
@@ -625,10 +646,20 @@
                 font-size: 13px;
                 padding: 12px 10px;
             }
+
+            .version-badge {
+                bottom: 12px;
+                right: 14px;
+                font-size: 11px;
+                padding: 3px 12px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- VERSION BADGE (bottom right) -->
+    <div class="version-badge">v1.1.0</div>
+
     <div class="container">
         <!-- HEADER -->
         <div class="header">
