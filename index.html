@@ -6,6 +6,7 @@
     <meta name="theme-color" content="#1a73e8" />
     <title>Interactive Quiz Viewer</title>
     <style>
+        /* ===== LIGHT MODE (default) ===== */
         :root {
             --primary: #1a73e8;
             --primary-dark: #1457b0;
@@ -18,8 +19,30 @@
             --text: #1f2937;
             --muted: #6b7280;
             --border: #e9edf4;
+            --hover-bg: #f0f4ff;
+            --disabled-bg: #f8fafc;
+            --shadow: rgba(0, 0, 0, 0.04);
         }
 
+        /* ===== DARK MODE ===== */
+        [data-theme="dark"] {
+            --primary: #4a9eff;
+            --primary-dark: #2b7ae0;
+            --success: #4caf50;
+            --success-bg: #1e3a2a;
+            --error: #ef5350;
+            --error-bg: #3a1e1e;
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #e8eaed;
+            --muted: #9aa0a8;
+            --border: #333333;
+            --hover-bg: #2a2a2a;
+            --disabled-bg: #2a2a2a;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== GLOBAL RESET ===== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -32,6 +55,7 @@
             color: var(--text);
             padding: 20px 14px;
             min-height: 100vh;
+            transition: background 0.25s, color 0.25s;
         }
 
         .container {
@@ -39,13 +63,14 @@
             margin: 0 auto;
         }
 
+        /* ===== HEADER ===== */
         .header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: #fff;
             border-radius: 20px;
             padding: 20px 22px;
             margin-bottom: 24px;
-            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.25);
+            box-shadow: 0 6px 20px var(--shadow);
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -55,13 +80,11 @@
         .header-left {
             flex: 1;
         }
-
         .header-left h1 {
             font-size: 24px;
             margin: 0 0 2px;
             font-weight: 700;
         }
-
         .header-left .subtitle {
             font-size: 14px;
             opacity: 0.95;
@@ -85,7 +108,8 @@
             white-space: nowrap;
         }
 
-        .redo-btn {
+        .redo-btn,
+        .theme-toggle {
             background: rgba(255, 255, 255, 0.25);
             border: none;
             color: #fff;
@@ -100,12 +124,18 @@
             align-items: center;
             gap: 6px;
         }
-
-        .redo-btn:hover {
+        .redo-btn:hover,
+        .theme-toggle:hover {
             background: rgba(255, 255, 255, 0.4);
             transform: scale(1.02);
         }
+        .theme-toggle {
+            font-size: 18px;
+            padding: 4px 12px;
+            line-height: 1;
+        }
 
+        /* ===== WEEKS NAV ===== */
         .weeks-nav {
             display: flex;
             flex-wrap: wrap;
@@ -114,7 +144,7 @@
         }
 
         .week-btn {
-            background: #e8ecf3;
+            background: var(--border);
             border: none;
             padding: 10px 16px;
             border-radius: 30px;
@@ -125,30 +155,29 @@
             transition: all 0.2s;
             flex: 0 0 auto;
         }
-
         .week-btn:hover {
-            background: #d0d8e6;
+            background: var(--hover-bg);
             transform: translateY(-1px);
         }
-
         .week-btn.active {
             background: var(--primary);
             color: #fff;
             box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
         }
-
         .week-btn.done {
             background: var(--success-bg);
             color: var(--success);
         }
 
+        /* ===== CARDS ===== */
         .card {
             background: var(--card);
             border-radius: 18px;
             padding: 24px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 16px var(--shadow);
             border: 1px solid var(--border);
             margin-bottom: 20px;
+            transition: background 0.25s, border 0.25s, box-shadow 0.25s;
         }
 
         .welcome-screen h2 {
@@ -163,15 +192,14 @@
             gap: 12px;
             margin-bottom: 20px;
         }
-
         .meta-item {
-            background: #f8fafc;
+            background: var(--disabled-bg);
             padding: 12px 14px;
             border-radius: 12px;
             font-size: 13px;
             color: var(--muted);
+            transition: background 0.25s;
         }
-
         .meta-item b {
             color: var(--primary);
             display: block;
@@ -179,19 +207,18 @@
             margin-top: 4px;
         }
 
+        /* ===== QUIZ ===== */
         .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 16px;
         }
-
         .counter {
             font-size: 13px;
             color: var(--muted);
             font-weight: 600;
         }
-
         .score {
             font-size: 13px;
             color: var(--primary);
@@ -200,19 +227,17 @@
 
         .progress-bar {
             height: 6px;
-            background: #e4e9f0;
+            background: var(--border);
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 20px;
         }
-
         .progress-bar>div {
             height: 100%;
             background: var(--primary);
             transition: width 0.3s ease;
         }
 
-        /* ===== NEWLINE SUPPORT ===== */
         .question-text,
         .revisor-q,
         .revisor-answer,
@@ -227,7 +252,6 @@
             margin-bottom: 16px;
             color: var(--text);
         }
-
         .question-text pre {
             background: #0f172a;
             color: #e2e8f0;
@@ -238,7 +262,7 @@
             overflow-x: auto;
             margin: 10px 0 0;
             line-height: 1.5;
-            white-space: pre; /* keep code formatting intact */
+            white-space: pre;
         }
 
         .options {
@@ -260,43 +284,36 @@
             transition: all 0.2s;
             font-size: 15px;
             line-height: 1.4;
+            color: var(--text);
         }
-
         .option:hover:not(.disabled) {
             border-color: var(--primary);
-            background: #f0f4ff;
+            background: var(--hover-bg);
         }
-
         .option.selected {
             border-color: var(--primary);
-            background: #eef6ff;
+            background: var(--hover-bg);
         }
-
         .option.selected .label {
             background: var(--primary);
             color: #fff;
         }
-
         .option.correct {
             border-color: var(--success);
             background: var(--success-bg);
         }
-
         .option.correct .label {
             background: var(--success);
             color: #fff;
         }
-
         .option.wrong {
             border-color: var(--error);
             background: var(--error-bg);
         }
-
         .option.wrong .label {
             background: var(--error);
             color: #fff;
         }
-
         .option.disabled {
             cursor: default;
         }
@@ -305,14 +322,15 @@
             flex: 0 0 28px;
             height: 28px;
             border-radius: 8px;
-            background: #eef2f7;
+            background: var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             font-size: 14px;
-            color: #475569;
-            white-space: normal; /* keep label compact */
+            color: var(--muted);
+            white-space: normal;
+            transition: background 0.25s, color 0.25s;
         }
 
         .feedback {
@@ -323,21 +341,19 @@
             font-size: 14px;
             display: none;
         }
-
         .feedback.show {
             display: block;
         }
-
         .feedback.correct {
             background: var(--success-bg);
             color: var(--success);
         }
-
         .feedback.wrong {
             background: var(--error-bg);
             color: var(--error);
         }
 
+        /* ===== BUTTONS ===== */
         .btn {
             background: var(--primary);
             color: #fff;
@@ -350,29 +366,23 @@
             transition: all 0.2s;
             width: 100%;
         }
-
         .btn:hover {
             background: var(--primary-dark);
             transform: translateY(-1px);
         }
-
         .btn:active {
             transform: scale(0.98);
         }
-
         .btn-ghost {
-            background: #eef1f6;
+            background: var(--border);
             color: var(--text);
         }
-
         .btn-ghost:hover {
-            background: #d0d8e6;
+            background: var(--hover-bg);
         }
-
         .btn-success {
             background: var(--success);
         }
-
         .btn-success:hover {
             background: #1e7a3a;
         }
@@ -383,7 +393,6 @@
             margin-top: 16px;
             flex-wrap: wrap;
         }
-
         .btn-row .btn {
             flex: 1;
             min-width: 100px;
@@ -393,29 +402,26 @@
             display: none !important;
         }
 
+        /* ===== RESULTS ===== */
         .results-score {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .big-number {
             font-size: 48px;
             font-weight: 800;
             color: var(--primary);
             line-height: 1;
         }
-
         .percentage {
             font-size: 32px;
             font-weight: 800;
             text-align: center;
             margin: 12px 0;
         }
-
         .percentage.pass {
             color: var(--success);
         }
-
         .percentage.fail {
             color: var(--error);
         }
@@ -426,11 +432,9 @@
             font-weight: 700;
             margin-bottom: 16px;
         }
-
         .verdict.pass {
             color: var(--success);
         }
-
         .verdict.fail {
             color: var(--error);
         }
@@ -443,11 +447,9 @@
             font-weight: 700;
             font-size: 14px;
         }
-
         .stat-correct {
             color: var(--success);
         }
-
         .stat-wrong {
             color: var(--error);
         }
@@ -459,7 +461,6 @@
             justify-content: center;
             margin: 16px 0;
         }
-
         .chip {
             width: 36px;
             height: 32px;
@@ -471,29 +472,27 @@
             font-weight: 700;
             color: #fff;
         }
-
         .chip.correct {
             background: var(--success);
         }
-
         .chip.wrong {
             background: var(--error);
         }
 
+        /* ===== REVISOR ===== */
         .revisor-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-bottom: 16px;
         }
-
         .revisor-item {
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 14px;
-            background: #f8fafc;
+            background: var(--disabled-bg);
+            transition: background 0.25s, border 0.25s;
         }
-
         .revisor-q {
             font-size: 14px;
             font-weight: 700;
@@ -501,12 +500,10 @@
             margin-bottom: 8px;
             color: var(--text);
         }
-
         .revisor-q .num {
             color: var(--primary);
             margin-right: 6px;
         }
-
         .revisor-q pre {
             background: #0f172a;
             color: #e2e8f0;
@@ -530,7 +527,6 @@
             border-radius: 8px;
             margin-top: 4px;
         }
-
         .revisor-answer .label {
             flex: 0 0 24px;
             height: 24px;
@@ -541,41 +537,35 @@
             color: #fff;
             font-weight: 700;
         }
-
         .revisor-answer.correct-answer .label {
             background: var(--success);
         }
-
         .revisor-answer.wrong-answer .label {
             background: var(--error);
         }
-
         .revisor-answer.user-answer {
             background: var(--error-bg);
             border-left: 4px solid var(--error);
         }
-
         .revisor-answer.correct-answer {
             background: var(--success-bg);
             border-left: 4px solid var(--success);
         }
 
+        /* ===== DONE SCREEN ===== */
         .done-screen {
             text-align: center;
             padding: 20px 0;
         }
-
         .done-screen .trophy {
             font-size: 72px;
             margin-bottom: 12px;
         }
-
         .done-screen h2 {
             color: var(--primary);
             font-size: 28px;
             margin-bottom: 8px;
         }
-
         .done-screen p {
             color: var(--muted);
             font-size: 16px;
@@ -587,7 +577,6 @@
             border-top: 2px solid var(--border);
             padding-top: 20px;
         }
-
         .review-detail h3 {
             font-size: 18px;
             margin-bottom: 12px;
@@ -613,40 +602,34 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 480px) {
             .header {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 8px;
             }
-
             .header-right {
                 justify-content: flex-start;
                 flex-wrap: wrap;
             }
-
             .header-left h1 {
                 font-size: 20px;
             }
-
             .quiz-meta {
                 grid-template-columns: 1fr;
             }
-
             .big-number {
                 font-size: 40px;
             }
-
             .percentage {
                 font-size: 28px;
             }
-
             .btn-row .btn {
                 min-width: 80px;
                 font-size: 13px;
                 padding: 12px 10px;
             }
-
             .version-badge {
                 bottom: 12px;
                 right: 14px;
@@ -657,8 +640,9 @@
     </style>
 </head>
 <body>
-    <!-- VERSION BADGE (bottom right) -->
-    <div class="version-badge">v1.1.0</div>
+
+    <!-- VERSION BADGE -->
+    <div class="version-badge">v1.2.0</div>
 
     <div class="container">
         <!-- HEADER -->
@@ -669,14 +653,15 @@
             </div>
             <div class="header-right">
                 <span class="total-badge" id="totalBadge">📝 Total: —</span>
-                <button class="redo-btn" id="redoHeaderBtn" onclick="redoQuiz()">🔄 Redo</button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="redo-btn" onclick="redoQuiz()">🔄 Redo</button>
             </div>
         </div>
 
         <!-- WEEKS NAV -->
         <div class="weeks-nav" id="weeksNav"></div>
 
-        <!-- WELCOME SCREEN -->
+        <!-- WELCOME -->
         <div id="welcomeScreen" class="card welcome-screen">
             <h2>👋 Welcome to Quiz</h2>
             <div class="quiz-meta">
@@ -687,7 +672,7 @@
             <button class="btn btn-ghost" style="margin-top:10px;" onclick="openRevisor()">📖 Study All Answers</button>
         </div>
 
-        <!-- QUIZ SCREEN -->
+        <!-- QUIZ -->
         <div id="quizScreen" class="card hide">
             <div class="topbar">
                 <span class="counter" id="counter"></span>
@@ -700,7 +685,7 @@
             <button class="btn" id="actionBtn" onclick="submitAnswer()">Submit Answer</button>
         </div>
 
-        <!-- RESULTS SCREEN -->
+        <!-- RESULTS -->
         <div id="resultsScreen" class="card hide">
             <h2 style="text-align:center; color:var(--primary); margin-bottom:16px;">📊 Results</h2>
             <div class="results-score">
@@ -714,8 +699,7 @@
             </div>
             <div class="chip-grid" id="chipGrid"></div>
 
-            <!-- Detailed answer review -->
-            <div class="review-detail" id="detailedReviewContainer">
+            <div class="review-detail">
                 <h3>📝 Detailed Review</h3>
                 <div class="revisor-list" id="detailedReview"></div>
             </div>
@@ -727,7 +711,7 @@
             </div>
         </div>
 
-        <!-- REVISOR SCREEN -->
+        <!-- REVISOR -->
         <div id="revisorScreen" class="card hide">
             <h2 style="color:var(--primary); margin-bottom:8px;">📖 Study Guide</h2>
             <p style="color:var(--muted); margin-bottom:16px; font-size:14px;">All questions and answers for this week</p>
@@ -736,7 +720,7 @@
             <button class="btn btn-ghost" style="margin-top:10px;" onclick="showWelcome()">⬅ Back</button>
         </div>
 
-        <!-- DONE SCREEN (max week reached) -->
+        <!-- DONE -->
         <div id="doneScreen" class="card hide done-screen">
             <div class="trophy">🏆</div>
             <h2>That's it, you're done!</h2>
@@ -746,6 +730,30 @@
     </div>
 
     <script>
+        // ─── DARK MODE ──────────────────────────────────────────────────────
+        (function initTheme() {
+            const stored = localStorage.getItem('quizTheme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = stored || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            updateThemeIcon(theme);
+        })();
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('quizTheme', next);
+            updateThemeIcon(next);
+        }
+
+        function updateThemeIcon(theme) {
+            const btn = document.getElementById('themeToggle');
+            btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
         // ─── STATE ──────────────────────────────────────────────────────────
         let quizData = null;
         let currentWeekIdx = 0;
@@ -753,8 +761,8 @@
         let score = 0;
         let selectedAnswer = -1;
         let submitted = false;
-        let answers = []; // boolean for each question (correct/incorrect)
-        let userAnswers = []; // index of selected option for each question
+        let answers = [];
+        let userAnswers = [];
 
         // ─── LOAD ──────────────────────────────────────────────────────────
         async function loadQuizData() {
@@ -805,7 +813,6 @@
             });
         }
 
-        // ─── HEADER ──────────────────────────────────────────────────────
         function updateHeader() {
             const week = quizData.data[currentWeekIdx];
             document.getElementById('headerSubtitle').textContent = week.name;
@@ -840,11 +847,8 @@
             highlightCurrentWeek();
         }
 
-        // ─── REDO QUIZ (always visible via header button) ──────────────
         function redoQuiz() {
             if (!quizData) return;
-            // If we're on done screen, go to week 0 first? But better to redo current week.
-            // If done screen, we can still redo the last week.
             startQuiz();
         }
 
@@ -867,7 +871,6 @@
             document.getElementById('correctCount').textContent = `✅ Correct: ${score}`;
             document.getElementById('wrongCount').textContent = `❌ Wrong: ${total - score}`;
 
-            // Chips
             const grid = document.getElementById('chipGrid');
             grid.innerHTML = '';
             answers.forEach((isCorrect, idx) => {
@@ -892,7 +895,6 @@
 
                 let qHtml = `<span class="num">${idx + 1}.</span>${q.text}`;
 
-                // User's answer
                 let userAnswerHtml = '';
                 if (userIdx >= 0) {
                     const userOpt = q.options[userIdx];
@@ -903,10 +905,9 @@
                         </div>
                     `;
                 } else {
-                    userAnswerHtml = `<div class="revisor-answer" style="background:#f0f0f0;">Not answered</div>`;
+                    userAnswerHtml = `<div class="revisor-answer" style="background:var(--border);">Not answered</div>`;
                 }
 
-                // Correct answer (always shown)
                 const correctOpt = q.options[correctIdx];
                 const correctHtml = `
                     <div class="revisor-answer correct-answer">
@@ -927,7 +928,6 @@
                 reviewContainer.appendChild(item);
             });
 
-            // Next week button
             const isLast = currentWeekIdx === quizData.data.length - 1;
             const btn = document.getElementById('nextWeekBtn');
             if (isLast) {
@@ -1051,7 +1051,6 @@
                 if (isCorrect) score++;
                 submitted = true;
 
-                // Show feedback
                 document.querySelectorAll('.option').forEach((opt, i) => {
                     opt.classList.add('disabled');
                     if (i === correctIdx) opt.classList.add('correct');
