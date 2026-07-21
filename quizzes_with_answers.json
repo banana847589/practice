@@ -1,0 +1,3584 @@
+{
+  "metadata": {
+    "total_questions": 150,
+    "last_updated": "2026-07-21T18:33:13"
+  },
+  "data": [
+    {
+      "global_week": 1,
+      "month": 1,
+      "week": 1,
+      "name": "Week 1 - Python Programming Fundamentals",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "408",
+          "text": "A student writes the following line in Python: result = input(\"Enter a score: \") and then tries to calculate result + 10. The program crashes. What is the most likely cause?",
+          "options": [
+            {
+              "id": "1626",
+              "text": "input() returns a string, so adding an integer without converting first causes a TypeError."
+            },
+            {
+              "id": "1628",
+              "text": "Python cannot store numbers entered by the user."
+            },
+            {
+              "id": "1627",
+              "text": "The print() function is missing from the program."
+            },
+            {
+              "id": "1625",
+              "text": "The variable name result is a reserved keyword in Python."
+            }
+          ],
+          "correct_option_id": "1626"
+        },
+        {
+          "id": "409",
+          "text": "Python is described as an interpreted language, while C++ is typically compiled. Which statement best describes a key trade-off of Python's interpreted approach?",
+          "options": [
+            {
+              "id": "1632",
+              "text": "Interpreted languages are always less suited for AI work than compiled ones."
+            },
+            {
+              "id": "1629",
+              "text": "Python code cannot be shared across different operating systems."
+            },
+            {
+              "id": "1631",
+              "text": "Python is slower and also harder to read than compiled languages."
+            },
+            {
+              "id": "1630",
+              "text": "Python runs slower than compiled languages, but provides instant feedback that accelerates learning and development."
+            }
+          ],
+          "correct_option_id": "1630"
+        },
+        {
+          "id": "410",
+          "text": "You are building a program that stores a student's percentage grade, such as 87.5. Which data type should you use, and why?",
+          "options": [
+            {
+              "id": "1636",
+              "text": "bool, because the student either passes or fails."
+            },
+            {
+              "id": "1635",
+              "text": "float, because the value contains a decimal point and requires precision."
+            },
+            {
+              "id": "1633",
+              "text": "int, because grades are numbers and Python converts them automatically."
+            },
+            {
+              "id": "1634",
+              "text": "str, because grades are displayed as text on a report card."
+            }
+          ],
+          "correct_option_id": "1635"
+        },
+        {
+          "id": "411",
+          "text": "In Python, indentation is not just a style preference — it is part of the language's syntax. What happens if indentation is missing or inconsistent inside an if block?",
+          "options": [
+            {
+              "id": "1640",
+              "text": "Only the first missing indentation is flagged; the rest are ignored."
+            },
+            {
+              "id": "1637",
+              "text": "Python automatically adds the correct indentation and runs the program."
+            },
+            {
+              "id": "1639",
+              "text": "Python raises an IndentationError and stops execution."
+            },
+            {
+              "id": "1638",
+              "text": "The program runs but produces wrong output silently."
+            }
+          ],
+          "correct_option_id": "1639"
+        },
+        {
+          "id": "412",
+          "text": "A developer wants to share a Python notebook with a classmate who has no software installed on their computer. Which environment is the best choice, and what is its primary advantage?",
+          "options": [
+            {
+              "id": "1643",
+              "text": "Anaconda, because it installs all libraries at once without any browser."
+            },
+            {
+              "id": "1642",
+              "text": "Google Colab, because it runs in any browser, requires zero installation, and auto-saves to Google Drive."
+            },
+            {
+              "id": "1641",
+              "text": "Local Jupyter, because it works offline and gives full control over the file system."
+            },
+            {
+              "id": "1644",
+              "text": "VS Code, because it is the only IDE that supports Python notebooks."
+            }
+          ],
+          "correct_option_id": "1642"
+        },
+        {
+          "id": "413",
+          "text": "Examine this code: print(\"2026\", \"03\", \"30\", sep=\"/\"). What will be printed?",
+          "options": [
+            {
+              "id": "1647",
+              "text": "\"2026\"/\"03\"/\"30\""
+            },
+            {
+              "id": "1645",
+              "text": "2026 03 30"
+            },
+            {
+              "id": "1648",
+              "text": "2026,03,30"
+            },
+            {
+              "id": "1646",
+              "text": "2026/03/30"
+            }
+          ],
+          "correct_option_id": "1646"
+        },
+        {
+          "id": "414",
+          "text": "A programmer writes: total = 10 / 2. A colleague says the result is an integer 5. Is the colleague correct, and why?",
+          "options": [
+            {
+              "id": "1650",
+              "text": "No — the / operator always returns a float in Python, so the result is 5.0."
+            },
+            {
+              "id": "1651",
+              "text": "No — the result depends on which Python version is installed."
+            },
+            {
+              "id": "1649",
+              "text": "Yes — dividing two integers always returns an integer in Python."
+            },
+            {
+              "id": "1652",
+              "text": "Yes — Python removes the decimal automatically when the result is a whole number."
+            }
+          ],
+          "correct_option_id": "1650"
+        },
+        {
+          "id": "415",
+          "text": "Which of the following variable names violates Python's naming rules and would cause a SyntaxError?",
+          "options": [
+            {
+              "id": "1655",
+              "text": "2score = 95"
+            },
+            {
+              "id": "1656",
+              "text": "final_score = 100"
+            },
+            {
+              "id": "1654",
+              "text": "score2 = 95"
+            },
+            {
+              "id": "1653",
+              "text": "student_age = 17"
+            }
+          ],
+          "correct_option_id": "1655"
+        },
+        {
+          "id": "416",
+          "text": "A Python script includes several lines with # at the start, written in plain English explaining what each section does. A junior developer removes them, saying they slow the program down. Is this decision correct?",
+          "options": [
+            {
+              "id": "1659",
+              "text": "No — Python completely ignores comments at runtime, so they have zero effect on speed."
+            },
+            {
+              "id": "1660",
+              "text": "No — removing comments causes a SyntaxError if they contained important instructions."
+            },
+            {
+              "id": "1657",
+              "text": "Yes — comments are executed by Python, so removing them improves performance."
+            },
+            {
+              "id": "1658",
+              "text": "Yes — comments are only useful during development and should not be in final code."
+            }
+          ],
+          "correct_option_id": "1659"
+        },
+        {
+          "id": "417",
+          "text": "A student writes name = \"Python\" and then prints name[1]. They expect the output to be \"P\" because it is the first letter. What is actually printed, and why?",
+          "options": [
+            {
+              "id": "1664",
+              "text": "An error — square brackets cannot be used on string variables."
+            },
+            {
+              "id": "1661",
+              "text": "\"P\" — string indexing in Python starts at 1, so name[1] returns the first character."
+            },
+            {
+              "id": "1663",
+              "text": "\"Py\" — Python returns a two-character slice when a single index is used."
+            },
+            {
+              "id": "1662",
+              "text": "\"y\" — string indexing starts at 0, so name[1] refers to the second character."
+            }
+          ],
+          "correct_option_id": "1662"
+        }
+      ]
+    },
+    {
+      "global_week": 2,
+      "month": 1,
+      "week": 2,
+      "name": "Week 2 - Taking Control of Data & Logic",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "658",
+          "text": "What is the result of 10 / 2 in Python?",
+          "options": [
+            {
+              "id": "2625",
+              "text": "10"
+            },
+            {
+              "id": "2626",
+              "text": "2"
+            },
+            {
+              "id": "2627",
+              "text": "5"
+            },
+            {
+              "id": "2628",
+              "text": "5.0"
+            }
+          ],
+          "correct_option_id": "2628"
+        },
+        {
+          "id": "659",
+          "text": "Which operator is used to find the remainder of a division?",
+          "options": [
+            {
+              "id": "2629",
+              "text": "/"
+            },
+            {
+              "id": "2630",
+              "text": "//"
+            },
+            {
+              "id": "2631",
+              "text": "**"
+            },
+            {
+              "id": "2632",
+              "text": "%"
+            }
+          ],
+          "correct_option_id": "2632"
+        },
+        {
+          "id": "660",
+          "text": "What is the output of print(\"Hi\" * 3)?",
+          "options": [
+            {
+              "id": "2633",
+              "text": "Error"
+            },
+            {
+              "id": "2634",
+              "text": "Hi 3"
+            },
+            {
+              "id": "2635",
+              "text": "HiHiHi"
+            },
+            {
+              "id": "2636",
+              "text": "Hi+Hi+Hi"
+            }
+          ],
+          "correct_option_id": "2635"
+        },
+        {
+          "id": "661",
+          "text": "Which escape sequence is used to add a new line in a string?",
+          "options": [
+            {
+              "id": "2637",
+              "text": "\\n"
+            },
+            {
+              "id": "2638",
+              "text": "\\r"
+            },
+            {
+              "id": "2639",
+              "text": "\\s"
+            },
+            {
+              "id": "2640",
+              "text": "\\t"
+            }
+          ],
+          "correct_option_id": "2637"
+        },
+        {
+          "id": "662",
+          "text": "How do you correctly use an f-string to print a variable named \"price\"?",
+          "options": [
+            {
+              "id": "2641",
+              "text": "f\"Price is {price}\""
+            },
+            {
+              "id": "2642",
+              "text": "f\"Price is price\""
+            },
+            {
+              "id": "2643",
+              "text": "\"Price is \" + price"
+            },
+            {
+              "id": "2644",
+              "text": "\"Price is {price}\""
+            }
+          ],
+          "correct_option_id": "2641"
+        },
+        {
+          "id": "663",
+          "text": "What data type does the input() function always return?",
+          "options": [
+            {
+              "id": "2645",
+              "text": "bool"
+            },
+            {
+              "id": "2646",
+              "text": "float"
+            },
+            {
+              "id": "2647",
+              "text": "int"
+            },
+            {
+              "id": "2648",
+              "text": "str"
+            }
+          ],
+          "correct_option_id": "2648"
+        },
+        {
+          "id": "664",
+          "text": "What is the result of int(7.9) in Python?",
+          "options": [
+            {
+              "id": "2649",
+              "text": "7"
+            },
+            {
+              "id": "2650",
+              "text": "7.0"
+            },
+            {
+              "id": "2651",
+              "text": "8"
+            },
+            {
+              "id": "2652",
+              "text": "Error"
+            }
+          ],
+          "correct_option_id": "2649"
+        },
+        {
+          "id": "665",
+          "text": "Which operator is used to check if two values are equal?",
+          "options": [
+            {
+              "id": "2653",
+              "text": "="
+            },
+            {
+              "id": "2655",
+              "text": "=="
+            },
+            {
+              "id": "2654",
+              "text": "!="
+            },
+            {
+              "id": "2656",
+              "text": "is"
+            }
+          ],
+          "correct_option_id": "2655"
+        },
+        {
+          "id": "666",
+          "text": "In an \"and\" operation, when is the result True?",
+          "options": [
+            {
+              "id": "2657",
+              "text": "If all conditions are False"
+            },
+            {
+              "id": "2658",
+              "text": "If all conditions are True"
+            },
+            {
+              "id": "2659",
+              "text": "If at least one condition is True"
+            },
+            {
+              "id": "2660",
+              "text": "If the first condition is True"
+            }
+          ],
+          "correct_option_id": "2658"
+        },
+        {
+          "id": "667",
+          "text": "What is the standard number of spaces used for indentation in Python?",
+          "options": [
+            {
+              "id": "2661",
+              "text": "1 space"
+            },
+            {
+              "id": "2662",
+              "text": "2 spaces"
+            },
+            {
+              "id": "2663",
+              "text": "4 spaces"
+            },
+            {
+              "id": "2664",
+              "text": "8 spaces"
+            }
+          ],
+          "correct_option_id": "2663"
+        }
+      ]
+    },
+    {
+      "global_week": 3,
+      "month": 1,
+      "week": 3,
+      "name": "Week 3 - Loops & Functions",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "1346",
+          "text": "Which loop is best used when you know the exact number of items to iterate over?",
+          "options": [
+            {
+              "id": "5378",
+              "text": "For Loop"
+            },
+            {
+              "id": "5379",
+              "text": "If Statement"
+            },
+            {
+              "id": "5380",
+              "text": "Try Block"
+            },
+            {
+              "id": "5377",
+              "text": "While Loop"
+            }
+          ],
+          "correct_option_id": "5378"
+        },
+        {
+          "id": "1347",
+          "text": "What is the result of range(5)?",
+          "options": [
+            {
+              "id": "5383",
+              "text": "0, 1, 2, 3, 4"
+            },
+            {
+              "id": "5381",
+              "text": "0, 1, 2, 3, 4, 5"
+            },
+            {
+              "id": "5382",
+              "text": "1, 2, 3, 4, 5"
+            },
+            {
+              "id": "5384",
+              "text": "5, 5, 5, 5, 5"
+            }
+          ],
+          "correct_option_id": "5383"
+        },
+        {
+          "id": "1348",
+          "text": "What keyword is used to exit a loop prematurely?",
+          "options": [
+            {
+              "id": "5387",
+              "text": "break"
+            },
+            {
+              "id": "5385",
+              "text": "exit"
+            },
+            {
+              "id": "5388",
+              "text": "return"
+            },
+            {
+              "id": "5386",
+              "text": "stop"
+            }
+          ],
+          "correct_option_id": "5387"
+        },
+        {
+          "id": "1349",
+          "text": "What happens if code under a 'for' loop is NOT indented?",
+          "options": [
+            {
+              "id": "5391",
+              "text": "It causes an IndentationError"
+            },
+            {
+              "id": "5390",
+              "text": "It causes a SyntaxError"
+            },
+            {
+              "id": "5392",
+              "text": "It runs forever"
+            },
+            {
+              "id": "5389",
+              "text": "It runs normally"
+            }
+          ],
+          "correct_option_id": "5391"
+        },
+        {
+          "id": "1350",
+          "text": "Which keyword is used to define a custom reusable block of logic?",
+          "options": [
+            {
+              "id": "5395",
+              "text": "def"
+            },
+            {
+              "id": "5394",
+              "text": "define"
+            },
+            {
+              "id": "5393",
+              "text": "func"
+            },
+            {
+              "id": "5396",
+              "text": "make"
+            }
+          ],
+          "correct_option_id": "5395"
+        },
+        {
+          "id": "1351",
+          "text": "What is the difference between Parameters and Arguments?",
+          "options": [
+            {
+              "id": "5400",
+              "text": "Arguments are used in the 'def' line"
+            },
+            {
+              "id": "5397",
+              "text": "Parameters are actual data; Arguments are placeholders"
+            },
+            {
+              "id": "5398",
+              "text": "Parameters are placeholders; Arguments are actual data"
+            },
+            {
+              "id": "5399",
+              "text": "There is no difference"
+            }
+          ],
+          "correct_option_id": "5398"
+        },
+        {
+          "id": "1352",
+          "text": "If a function uses 'print' instead of 'return', what value is sent back to the main program?",
+          "options": [
+            {
+              "id": "5402",
+              "text": "0"
+            },
+            {
+              "id": "5404",
+              "text": "Error"
+            },
+            {
+              "id": "5403",
+              "text": "None"
+            },
+            {
+              "id": "5401",
+              "text": "The printed text"
+            }
+          ],
+          "correct_option_id": "5403"
+        },
+        {
+          "id": "1353",
+          "text": "In a try/except block, where should you place the code that might crash?",
+          "options": [
+            {
+              "id": "5408",
+              "text": "Above the def line"
+            },
+            {
+              "id": "5405",
+              "text": "In the except block"
+            },
+            {
+              "id": "5406",
+              "text": "In the finally block"
+            },
+            {
+              "id": "5407",
+              "text": "In the try block"
+            }
+          ],
+          "correct_option_id": "5407"
+        },
+        {
+          "id": "1354",
+          "text": "What is 'Stack Unwinding'?",
+          "options": [
+            {
+              "id": "5411",
+              "text": "A type of loop"
+            },
+            {
+              "id": "5409",
+              "text": "Python cleaning up memory"
+            },
+            {
+              "id": "5410",
+              "text": "Python searching backward for a safety net (except block)"
+            },
+            {
+              "id": "5412",
+              "text": "Sorting a list"
+            }
+          ],
+          "correct_option_id": "5410"
+        },
+        {
+          "id": "1355",
+          "text": "What does the 'DRY' principle stand for?",
+          "options": [
+            {
+              "id": "5414",
+              "text": "Data Retrieval Yield"
+            },
+            {
+              "id": "5416",
+              "text": "Digital Real-time Yield"
+            },
+            {
+              "id": "5415",
+              "text": "Don't Repeat Yourself"
+            },
+            {
+              "id": "5413",
+              "text": "Do Repeat Yourself"
+            }
+          ],
+          "correct_option_id": "5415"
+        }
+      ]
+    },
+    {
+      "global_week": 4,
+      "month": 1,
+      "week": 4,
+      "name": "Week 4 - Data Collections & Systems",
+      "question_count": 20,
+      "questions": [
+        {
+          "id": "1674",
+          "text": "Which bracket is used to define a List in Python?",
+          "options": [
+            {
+              "id": "6692",
+              "text": "Angle Brackets < >"
+            },
+            {
+              "id": "6690",
+              "text": "Curly Braces { }"
+            },
+            {
+              "id": "6689",
+              "text": "Parentheses ( )"
+            },
+            {
+              "id": "6691",
+              "text": "Square Brackets [ ]"
+            }
+          ],
+          "correct_option_id": "6691"
+        },
+        {
+          "id": "1675",
+          "text": "What is the index of the first item in a Python List?",
+          "options": [
+            {
+              "id": "6695",
+              "text": "0"
+            },
+            {
+              "id": "6693",
+              "text": "1"
+            },
+            {
+              "id": "6694",
+              "text": "-1"
+            },
+            {
+              "id": "6696",
+              "text": "Depends on the data type"
+            }
+          ],
+          "correct_option_id": "6695"
+        },
+        {
+          "id": "1676",
+          "text": "What is the result of [10, 20, 30, 40][1:3]?",
+          "options": [
+            {
+              "id": "6697",
+              "text": "[10, 20]"
+            },
+            {
+              "id": "6700",
+              "text": "[10, 20, 30]"
+            },
+            {
+              "id": "6698",
+              "text": "[20, 30]"
+            },
+            {
+              "id": "6699",
+              "text": "[20, 30, 40]"
+            }
+          ],
+          "correct_option_id": "6698"
+        },
+        {
+          "id": "1677",
+          "text": "Which data structure stores information in Key-Value pairs?",
+          "options": [
+            {
+              "id": "6703",
+              "text": "Dictionary"
+            },
+            {
+              "id": "6701",
+              "text": "List"
+            },
+            {
+              "id": "6702",
+              "text": "Set"
+            },
+            {
+              "id": "6704",
+              "text": "Tuple"
+            }
+          ],
+          "correct_option_id": "6703"
+        },
+        {
+          "id": "1678",
+          "text": "Why is the .get() method safer than using square brackets for Dictionaries?",
+          "options": [
+            {
+              "id": "6707",
+              "text": "It automatically sorts the dictionary"
+            },
+            {
+              "id": "6706",
+              "text": "It prevents a KeyError crash by returning a default value"
+            },
+            {
+              "id": "6705",
+              "text": "It runs faster"
+            },
+            {
+              "id": "6708",
+              "text": "It uses less memory"
+            }
+          ],
+          "correct_option_id": "6706"
+        },
+        {
+          "id": "1679",
+          "text": "What is the main characteristic of a Set?",
+          "options": [
+            {
+              "id": "6710",
+              "text": "It allows multiple duplicate items"
+            },
+            {
+              "id": "6712",
+              "text": "It has a fixed size"
+            },
+            {
+              "id": "6709",
+              "text": "It keeps items in alphabetical order"
+            },
+            {
+              "id": "6711",
+              "text": "It only stores unique items and automatically removes duplicates"
+            }
+          ],
+          "correct_option_id": "6711"
+        },
+        {
+          "id": "1680",
+          "text": "Which method is used to get both Keys and Values while looping through a Dictionary?",
+          "options": [
+            {
+              "id": "6716",
+              "text": ".all()"
+            },
+            {
+              "id": "6715",
+              "text": ".items()"
+            },
+            {
+              "id": "6713",
+              "text": ".keys()"
+            },
+            {
+              "id": "6714",
+              "text": ".values()"
+            }
+          ],
+          "correct_option_id": "6715"
+        },
+        {
+          "id": "1681",
+          "text": "What happens if you modify a List inside a function?",
+          "options": [
+            {
+              "id": "6720",
+              "text": "It causes a SyntaxError"
+            },
+            {
+              "id": "6717",
+              "text": "Nothing, the original list stays the same"
+            },
+            {
+              "id": "6719",
+              "text": "Python makes a copy automatically"
+            },
+            {
+              "id": "6718",
+              "text": "The original list is permanently changed because it's passed by reference"
+            }
+          ],
+          "correct_option_id": "6718"
+        },
+        {
+          "id": "1682",
+          "text": "Which collection would you choose to store a unique list of 'Banned User IDs' for fast lookup?",
+          "options": [
+            {
+              "id": "6722",
+              "text": "Dictionary"
+            },
+            {
+              "id": "6721",
+              "text": "List"
+            },
+            {
+              "id": "6723",
+              "text": "Set"
+            },
+            {
+              "id": "6724",
+              "text": "String"
+            }
+          ],
+          "correct_option_id": "6723"
+        },
+        {
+          "id": "1683",
+          "text": "In System Architecture, what is 'Global State'?",
+          "options": [
+            {
+              "id": "6727",
+              "text": "A type of error handling"
+            },
+            {
+              "id": "6725",
+              "text": "Data created inside a function"
+            },
+            {
+              "id": "6726",
+              "text": "Data that persists throughout the program's lifetime, usually defined outside functions"
+            },
+            {
+              "id": "6728",
+              "text": "The speed of the processor"
+            }
+          ],
+          "correct_option_id": "6726"
+        },
+        {
+          "id": "2562",
+          "text": "Which bracket is used to define a List in Python?",
+          "options": [
+            {
+              "id": "10244",
+              "text": "Angle Brackets < >"
+            },
+            {
+              "id": "10242",
+              "text": "Curly Braces { }"
+            },
+            {
+              "id": "10241",
+              "text": "Parentheses ( )"
+            },
+            {
+              "id": "10243",
+              "text": "Square Brackets [ ]"
+            }
+          ],
+          "correct_option_id": "10243"
+        },
+        {
+          "id": "2563",
+          "text": "What is the index of the first item in a Python List?",
+          "options": [
+            {
+              "id": "10247",
+              "text": "0"
+            },
+            {
+              "id": "10245",
+              "text": "1"
+            },
+            {
+              "id": "10246",
+              "text": "-1"
+            },
+            {
+              "id": "10248",
+              "text": "Depends on the data type"
+            }
+          ],
+          "correct_option_id": "10247"
+        },
+        {
+          "id": "2564",
+          "text": "What is the result of [10, 20, 30, 40][1:3]?",
+          "options": [
+            {
+              "id": "10249",
+              "text": "[10, 20]"
+            },
+            {
+              "id": "10252",
+              "text": "[10, 20, 30]"
+            },
+            {
+              "id": "10250",
+              "text": "[20, 30]"
+            },
+            {
+              "id": "10251",
+              "text": "[20, 30, 40]"
+            }
+          ],
+          "correct_option_id": "10250"
+        },
+        {
+          "id": "2565",
+          "text": "Which data structure stores information in Key-Value pairs?",
+          "options": [
+            {
+              "id": "10255",
+              "text": "Dictionary"
+            },
+            {
+              "id": "10253",
+              "text": "List"
+            },
+            {
+              "id": "10254",
+              "text": "Set"
+            },
+            {
+              "id": "10256",
+              "text": "Tuple"
+            }
+          ],
+          "correct_option_id": "10255"
+        },
+        {
+          "id": "2566",
+          "text": "Why is the .get() method safer than using square brackets for Dictionaries?",
+          "options": [
+            {
+              "id": "10259",
+              "text": "It automatically sorts the dictionary"
+            },
+            {
+              "id": "10258",
+              "text": "It prevents a KeyError crash by returning a default value"
+            },
+            {
+              "id": "10257",
+              "text": "It runs faster"
+            },
+            {
+              "id": "10260",
+              "text": "It uses less memory"
+            }
+          ],
+          "correct_option_id": "10258"
+        },
+        {
+          "id": "2567",
+          "text": "What is the main characteristic of a Set?",
+          "options": [
+            {
+              "id": "10262",
+              "text": "It allows multiple duplicate items"
+            },
+            {
+              "id": "10264",
+              "text": "It has a fixed size"
+            },
+            {
+              "id": "10261",
+              "text": "It keeps items in alphabetical order"
+            },
+            {
+              "id": "10263",
+              "text": "It only stores unique items and automatically removes duplicates"
+            }
+          ],
+          "correct_option_id": "10263"
+        },
+        {
+          "id": "2568",
+          "text": "Which method is used to get both Keys and Values while looping through a Dictionary?",
+          "options": [
+            {
+              "id": "10268",
+              "text": ".all()"
+            },
+            {
+              "id": "10267",
+              "text": ".items()"
+            },
+            {
+              "id": "10265",
+              "text": ".keys()"
+            },
+            {
+              "id": "10266",
+              "text": ".values()"
+            }
+          ],
+          "correct_option_id": "10267"
+        },
+        {
+          "id": "2569",
+          "text": "What happens if you modify a List inside a function?",
+          "options": [
+            {
+              "id": "10272",
+              "text": "It causes a SyntaxError"
+            },
+            {
+              "id": "10269",
+              "text": "Nothing, the original list stays the same"
+            },
+            {
+              "id": "10271",
+              "text": "Python makes a copy automatically"
+            },
+            {
+              "id": "10270",
+              "text": "The original list is permanently changed because it's passed by reference"
+            }
+          ],
+          "correct_option_id": "10270"
+        },
+        {
+          "id": "2570",
+          "text": "Which collection would you choose to store a unique list of 'Banned User IDs' for fast lookup?",
+          "options": [
+            {
+              "id": "10274",
+              "text": "Dictionary"
+            },
+            {
+              "id": "10273",
+              "text": "List"
+            },
+            {
+              "id": "10275",
+              "text": "Set"
+            },
+            {
+              "id": "10276",
+              "text": "String"
+            }
+          ],
+          "correct_option_id": "10275"
+        },
+        {
+          "id": "2571",
+          "text": "In System Architecture, what is 'Global State'?",
+          "options": [
+            {
+              "id": "10279",
+              "text": "A type of error handling"
+            },
+            {
+              "id": "10277",
+              "text": "Data created inside a function"
+            },
+            {
+              "id": "10278",
+              "text": "Data that persists throughout the program's lifetime, usually defined outside functions"
+            },
+            {
+              "id": "10280",
+              "text": "The speed of the processor"
+            }
+          ],
+          "correct_option_id": "10278"
+        }
+      ]
+    },
+    {
+      "global_week": 5,
+      "month": 2,
+      "week": 1,
+      "name": "Week 5 – Foundations of Artificial Intelligence",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "1974",
+          "text": "Which approach allows a computer to find its own rules from data?",
+          "options": [
+            {
+              "id": "7889",
+              "text": "Hard-coding"
+            },
+            {
+              "id": "7890",
+              "text": "Machine Learning"
+            },
+            {
+              "id": "7891",
+              "text": "Manual Instruction"
+            },
+            {
+              "id": "7892",
+              "text": "Procedural Logic"
+            }
+          ],
+          "correct_option_id": "7890"
+        },
+        {
+          "id": "1976",
+          "text": "Which step comes first in the ML lifecycle?",
+          "options": [
+            {
+              "id": "7897",
+              "text": "Data Acquisition"
+            },
+            {
+              "id": "7898",
+              "text": "Deployment"
+            },
+            {
+              "id": "7899",
+              "text": "Inference"
+            },
+            {
+              "id": "7900",
+              "text": "Model Training"
+            }
+          ],
+          "correct_option_id": "7897"
+        },
+        {
+          "id": "1977",
+          "text": "What does .argmax() return?",
+          "options": [
+            {
+              "id": "7901",
+              "text": "A random number"
+            },
+            {
+              "id": "7902",
+              "text": "The average value"
+            },
+            {
+              "id": "7903",
+              "text": "The index of the maximum value"
+            },
+            {
+              "id": "7904",
+              "text": "The total sum"
+            }
+          ],
+          "correct_option_id": "7903"
+        },
+        {
+          "id": "1978",
+          "text": "Normalization in AI usually involves scaling data to which range?",
+          "options": [
+            {
+              "id": "7905",
+              "text": "0 to 1,000,000"
+            },
+            {
+              "id": "7906",
+              "text": "-1 to 1 (or 0 to 1)"
+            },
+            {
+              "id": "7907",
+              "text": "Always 0"
+            },
+            {
+              "id": "7908",
+              "text": "Negative infinity to infinity"
+            }
+          ],
+          "correct_option_id": "7906"
+        },
+        {
+          "id": "1979",
+          "text": "Why do we use cloud tools like Google Colab for AI?",
+          "options": [
+            {
+              "id": "7909",
+              "text": "Because they are expensive"
+            },
+            {
+              "id": "7910",
+              "text": "Because they don't use Python"
+            },
+            {
+              "id": "7911",
+              "text": "To run heavy calculations on remote powerful servers"
+            },
+            {
+              "id": "7912",
+              "text": "To save battery on our local computer"
+            }
+          ],
+          "correct_option_id": "7911"
+        },
+        {
+          "id": "1980",
+          "text": "What defines a 'Robust' model?",
+          "options": [
+            {
+              "id": "7913",
+              "text": "One that has a small file size"
+            },
+            {
+              "id": "7914",
+              "text": "One that is written in many languages"
+            },
+            {
+              "id": "7915",
+              "text": "One that only works for the developer"
+            },
+            {
+              "id": "7916",
+              "text": "One that works consistently across different conditions and people"
+            }
+          ],
+          "correct_option_id": "7916"
+        },
+        {
+          "id": "1981",
+          "text": "A 'Deepfake' is an ethical concern primarily related to:",
+          "options": [
+            {
+              "id": "7917",
+              "text": "Broken hardware"
+            },
+            {
+              "id": "7918",
+              "text": "Low dataset variety"
+            },
+            {
+              "id": "7919",
+              "text": "Slow internet"
+            },
+            {
+              "id": "7920",
+              "text": "Synthetic media generation"
+            }
+          ],
+          "correct_option_id": "7920"
+        },
+        {
+          "id": "1982",
+          "text": "What is 'Feature Extraction'?",
+          "options": [
+            {
+              "id": "7921",
+              "text": "Buying new features for a model"
+            },
+            {
+              "id": "7922",
+              "text": "Deleting data"
+            },
+            {
+              "id": "7923",
+              "text": "Identifying unique mathematical markers in data"
+            },
+            {
+              "id": "7924",
+              "text": "None of the above"
+            }
+          ],
+          "correct_option_id": "7923"
+        },
+        {
+          "id": "1983",
+          "text": "AI Modalities like CV and NLP aim to simulate:",
+          "options": [
+            {
+              "id": "7925",
+              "text": "Computer hardware"
+            },
+            {
+              "id": "7926",
+              "text": "Corporate hierarchies"
+            },
+            {
+              "id": "7927",
+              "text": "Electricity"
+            },
+            {
+              "id": "7928",
+              "text": "Human senses and cognitive perception"
+            }
+          ],
+          "correct_option_id": "7928"
+        },
+        {
+          "id": "2104",
+          "text": "What is the main difference between Generative AI and Classification AI?",
+          "options": [
+            {
+              "id": "8410",
+              "text": "Generative AI creates new content, while Classification AI labels existing data"
+            },
+            {
+              "id": "8412",
+              "text": "Generative AI is faster than Classification AI"
+            },
+            {
+              "id": "8411",
+              "text": "Generative AI only works with images, while Classification AI works with text"
+            },
+            {
+              "id": "8409",
+              "text": "Generative AI stores data, while Classification AI deletes data"
+            }
+          ],
+          "correct_option_id": "8410"
+        }
+      ]
+    },
+    {
+      "global_week": 6,
+      "month": 2,
+      "week": 2,
+      "name": "Week 6 - Introduction to Data Science & Data Analysis",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "2252",
+          "text": "Netflix invested $100 million in 'House of Cards' without a pilot episode. Why was this considered a data-driven decision rather than a guess?",
+          "options": [
+            {
+              "id": "9003",
+              "text": "The executives relied on the instinct of experienced producers who had a strong track record"
+            },
+            {
+              "id": "9001",
+              "text": "They analysed viewing patterns, actor preferences, and director engagement of 30 million subscribers to identify a statistically reliable pattern before committing"
+            },
+            {
+              "id": "9002",
+              "text": "They conducted a large audience survey before committing to production"
+            },
+            {
+              "id": "9004",
+              "text": "They copied a successful model that had already worked on a competing platform"
+            }
+          ],
+          "correct_option_id": "9001"
+        },
+        {
+          "id": "2253",
+          "text": "A Data Scientist designs a recommendation model. An ML Engineer then takes over. What does the ML Engineer do that the Data Scientist does NOT?",
+          "options": [
+            {
+              "id": "9008",
+              "text": "The ML Engineer evaluates whether the model's accuracy is high enough for production"
+            },
+            {
+              "id": "9005",
+              "text": "The ML Engineer selects which algorithm to use for the model"
+            },
+            {
+              "id": "9006",
+              "text": "The ML Engineer takes the designed model and deploys it into a live system capable of serving millions of users every day"
+            },
+            {
+              "id": "9007",
+              "text": "The ML Engineer trains the model on the raw dataset"
+            }
+          ],
+          "correct_option_id": "9006"
+        },
+        {
+          "id": "2254",
+          "text": "Twitter generates approximately 500 million tweets every day. Why does processing this data require a network of computers rather than a single powerful machine?",
+          "options": [
+            {
+              "id": "9012",
+              "text": "A network is needed only because tweets contain images and video, which are large files"
+            },
+            {
+              "id": "9009",
+              "text": "A single machine could handle it, but using a network is cheaper"
+            },
+            {
+              "id": "9010",
+              "text": "Legal regulations require data to be split across multiple servers in different countries"
+            },
+            {
+              "id": "9011",
+              "text": "The volume, speed, and scale of the data exceeds what any single machine can store or process, so the workload must be distributed across many connected nodes"
+            }
+          ],
+          "correct_option_id": "9011"
+        },
+        {
+          "id": "2255",
+          "text": "What would most likely happen if a data scientist built a model (Step 5) immediately after collecting data (Step 2), skipping the Clean Data and Exploration steps?",
+          "options": [
+            {
+              "id": "9014",
+              "text": "The Deploy step would detect the problem and refuse to publish the model"
+            },
+            {
+              "id": "9015",
+              "text": "The Evaluate step would automatically correct any errors introduced by skipping cleaning"
+            },
+            {
+              "id": "9013",
+              "text": "The model would train faster and give the same results"
+            },
+            {
+              "id": "9016",
+              "text": "The model would train on dirty, unexamined data — errors, duplicates, and missing values would distort the learned patterns, producing unreliable predictions"
+            }
+          ],
+          "correct_option_id": "9016"
+        },
+        {
+          "id": "2256",
+          "text": "How does Data Analysis relate to Data Science?",
+          "options": [
+            {
+              "id": "9018",
+              "text": "Data Analysis and Data Science are completely separate fields with no overlap"
+            },
+            {
+              "id": "9017",
+              "text": "Data Analysis is a specialisation within the broader field of Data Science — it focuses on understanding past data, while Data Science also includes prediction, machine learning, and engineering"
+            },
+            {
+              "id": "9020",
+              "text": "Data Science deals only with large datasets, while Data Analysis works with small spreadsheets"
+            },
+            {
+              "id": "9019",
+              "text": "Data Science is a subset of Data Analysis; every Data Scientist is also a Data Analyst"
+            }
+          ],
+          "correct_option_id": "9017"
+        },
+        {
+          "id": "2257",
+          "text": "A shoe retailer wants to know which shoe size to stock the most. They have sales records for 1,000 customers. Which measure of centre is most directly useful here, and why?",
+          "options": [
+            {
+              "id": "9021",
+              "text": "Mean, because it averages all sizes sold and points to the middle of demand"
+            },
+            {
+              "id": "9023",
+              "text": "Median, because half the customers wear a size below it and half above"
+            },
+            {
+              "id": "9022",
+              "text": "Mode, because the most frequently purchased size tells the retailer exactly which size to order in the largest quantity"
+            },
+            {
+              "id": "9024",
+              "text": "Variability, because the spread of sizes tells the retailer how many different sizes to stock"
+            }
+          ],
+          "correct_option_id": "9022"
+        },
+        {
+          "id": "2258",
+          "text": "An analyst needs to process 1.5 million rows of transaction data and run the same analysis automatically every morning. Which tool is most appropriate, and why?",
+          "options": [
+            {
+              "id": "9025",
+              "text": "Excel, because it is the most widely used tool in business and supports all standard formulas"
+            },
+            {
+              "id": "9026",
+              "text": "Google Sheets, because it stores data in the cloud and can be shared with the whole team"
+            },
+            {
+              "id": "9027",
+              "text": "Python, because it handles millions of rows efficiently, supports scheduled automation, and can run the entire pipeline without manual intervention"
+            },
+            {
+              "id": "9028",
+              "text": "Tableau, because it creates the clearest visualisations from large datasets"
+            }
+          ],
+          "correct_option_id": "9027"
+        },
+        {
+          "id": "2259",
+          "text": "After applying =MAX and =MIN to the Science scores column, you get 98 and 22. What does this pair of values tell you that the average alone cannot?",
+          "options": [
+            {
+              "id": "9029",
+              "text": "It confirms that the average is accurate and no outliers exist"
+            },
+            {
+              "id": "9031",
+              "text": "It identifies which specific student scored the highest and which scored the lowest"
+            },
+            {
+              "id": "9032",
+              "text": "It reveals the full range of performance — the best and worst individual scores — indicating that the class has extremely uneven results that the average masks"
+            },
+            {
+              "id": "9030",
+              "text": "It shows the total number of students who passed the Science exam"
+            }
+          ],
+          "correct_option_id": "9032"
+        },
+        {
+          "id": "2260",
+          "text": "After building the Bar Chart of subject averages, why is it faster to identify the strongest subject visually than by reading the three average numbers in cells?",
+          "options": [
+            {
+              "id": "9036",
+              "text": "Charts are faster only when the values are very close together, not when they differ significantly"
+            },
+            {
+              "id": "9033",
+              "text": "The brain processes relative bar heights pre-attentively — the tallest bar is identified almost instantly without arithmetic, whereas comparing three numbers still requires mental calculation"
+            },
+            {
+              "id": "9035",
+              "text": "The chart recalculates the averages more accurately than the AVERAGE formula"
+            },
+            {
+              "id": "9034",
+              "text": "The chart sorts the subjects alphabetically, making comparison easier"
+            }
+          ],
+          "correct_option_id": "9033"
+        },
+        {
+          "id": "2261",
+          "text": "The DS Workflow's 'Monitor' step shows that a spam filter's accuracy has been steadily dropping over three months. What does this trigger, and why does it illustrate that the Workflow is a loop rather than a straight line?",
+          "options": [
+            {
+              "id": "9038",
+              "text": "Declining accuracy signals that the world has changed and the model no longer fits — the team loops back to 'Ask a Question', gathers fresh data, re-cleans, rebuilds, re-evaluates, and redeploys, showing the Workflow is a continuous improvement cycle"
+            },
+            {
+              "id": "9039",
+              "text": "The Evaluate step is rerun on the existing model without collecting new data"
+            },
+            {
+              "id": "9040",
+              "text": "The Monitor step automatically retrains the model without human involvement"
+            },
+            {
+              "id": "9037",
+              "text": "The team should shut down the model and build a completely new product from scratch"
+            }
+          ],
+          "correct_option_id": "9038"
+        }
+      ]
+    },
+    {
+      "global_week": 7,
+      "month": 2,
+      "week": 3,
+      "name": "Week 7 – Introduction to Data Wrangling",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "2372",
+          "text": "A student finds that her school's competition results were collected on paper, WhatsApp, and a Google Sheet — and nobody can read the combined data. What is the first step of the Data Wrangling pipeline she should start with?",
+          "options": [
+            {
+              "id": "9481",
+              "text": "Clean"
+            },
+            {
+              "id": "9482",
+              "text": "Enrich"
+            },
+            {
+              "id": "9483",
+              "text": "Gather"
+            },
+            {
+              "id": "9484",
+              "text": "Publish"
+            }
+          ],
+          "correct_option_id": "9483"
+        },
+        {
+          "id": "2373",
+          "text": "Which of the following is NOT one of the three pillars of data quality?",
+          "options": [
+            {
+              "id": "9485",
+              "text": "Accuracy"
+            },
+            {
+              "id": "9486",
+              "text": "Completeness"
+            },
+            {
+              "id": "9488",
+              "text": "Consistency"
+            },
+            {
+              "id": "9487",
+              "text": "Creativity"
+            }
+          ],
+          "correct_option_id": "9487"
+        },
+        {
+          "id": "2374",
+          "text": "A roster shows 'مهاجم', 'Forward', 'FWD', and 'forward' all meaning the same position. A player also appears twice with slightly different name spelling. Which two problem types are present?",
+          "options": [
+            {
+              "id": "9490",
+              "text": "Formatting Inconsistency and Duplicate"
+            },
+            {
+              "id": "9489",
+              "text": "Missing Value and Duplicate"
+            },
+            {
+              "id": "9492",
+              "text": "Missing Value and Wrong Type"
+            },
+            {
+              "id": "9491",
+              "text": "Wrong Type and Out-of-Range"
+            }
+          ],
+          "correct_option_id": "9490"
+        },
+        {
+          "id": "2375",
+          "text": "An analyst receives a CSV file of player ages. One entry reads 'خمستاشر' (Arabic for fifteen) instead of 15. Which problem type is this, and which cleaning step fixes it?",
+          "options": [
+            {
+              "id": "9496",
+              "text": "Formatting Inconsistency — standardise casing"
+            },
+            {
+              "id": "9493",
+              "text": "Missing Value — fill with 15"
+            },
+            {
+              "id": "9494",
+              "text": "Out-of-Range Value — remove the row"
+            },
+            {
+              "id": "9495",
+              "text": "Wrong Data Type — convert to integer"
+            }
+          ],
+          "correct_option_id": "9495"
+        },
+        {
+          "id": "2376",
+          "text": "A data analyst is deciding whether to drop or fill rows with missing phone numbers in a student dataset. She checks what the data will be used for before deciding. This reflects which core principle of data cleaning?",
+          "options": [
+            {
+              "id": "9497",
+              "text": "Always remove rows with any missing field"
+            },
+            {
+              "id": "9499",
+              "text": "Missing values should always be replaced with zero"
+            },
+            {
+              "id": "9500",
+              "text": "Only rows with all fields present are valid"
+            },
+            {
+              "id": "9498",
+              "text": "The right fix depends on the intended use of the data"
+            }
+          ],
+          "correct_option_id": "9498"
+        },
+        {
+          "id": "2377",
+          "text": "Which data source type sends continuous real-time updates without the system needing to request them each time?",
+          "options": [
+            {
+              "id": "9503",
+              "text": "API"
+            },
+            {
+              "id": "9501",
+              "text": "CSV File"
+            },
+            {
+              "id": "9502",
+              "text": "Database"
+            },
+            {
+              "id": "9504",
+              "text": "Live Stream"
+            }
+          ],
+          "correct_option_id": "9504"
+        },
+        {
+          "id": "2378",
+          "text": "The Gather step of the Data Wrangling pipeline is complete. What is the correct next step?",
+          "options": [
+            {
+              "id": "9507",
+              "text": "Assess"
+            },
+            {
+              "id": "9505",
+              "text": "Clean"
+            },
+            {
+              "id": "9506",
+              "text": "Enrich"
+            },
+            {
+              "id": "9508",
+              "text": "Publish"
+            }
+          ],
+          "correct_option_id": "9507"
+        },
+        {
+          "id": "2379",
+          "text": "Spotify enriches your listening history with genre tags and mood scores before its recommendation engine uses the data. Which pipeline step does this enrichment represent, and what comes after it?",
+          "options": [
+            {
+              "id": "9512",
+              "text": "Assess — then Clean"
+            },
+            {
+              "id": "9509",
+              "text": "Clean — then Assess"
+            },
+            {
+              "id": "9511",
+              "text": "Enrich — then Publish"
+            },
+            {
+              "id": "9510",
+              "text": "Gather — then Assess"
+            }
+          ],
+          "correct_option_id": "9511"
+        },
+        {
+          "id": "2380",
+          "text": "A dataset passes the Accuracy and Completeness checks but fails Consistency — the same city appears as 'Alex', 'Alexandria', and 'الإسكندرية'. Which cleaning operation addresses the Consistency failure?",
+          "options": [
+            {
+              "id": "9514",
+              "text": "Deduplication"
+            },
+            {
+              "id": "9515",
+              "text": "Format Standardisation"
+            },
+            {
+              "id": "9516",
+              "text": "Outlier Removal"
+            },
+            {
+              "id": "9513",
+              "text": "Type Conversion"
+            }
+          ],
+          "correct_option_id": "9515"
+        },
+        {
+          "id": "2381",
+          "text": "Which statement best describes why Data Wrangling matters in real-world systems like food delivery apps and sports associations?",
+          "options": [
+            {
+              "id": "9520",
+              "text": "It converts all data into CSV format"
+            },
+            {
+              "id": "9518",
+              "text": "It ensures the data used for decisions is accurate, complete, and consistent"
+            },
+            {
+              "id": "9517",
+              "text": "It makes databases run faster"
+            },
+            {
+              "id": "9519",
+              "text": "It replaces the need for Data Science"
+            }
+          ],
+          "correct_option_id": "9518"
+        }
+      ]
+    },
+    {
+      "global_week": 8,
+      "month": 2,
+      "week": 4,
+      "name": "Week 8 – Introduction to the Web and HTML",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "3188",
+          "text": "Which of the following correctly traces the step-by-step path of a web request?",
+          "options": [
+            {
+              "id": "12745",
+              "text": "Browser Request -> Internet Cables -> Server Processing -> HTTP Response Back to Browser."
+            },
+            {
+              "id": "12748",
+              "text": "HTML File Storage -> Client Browser -> Local Network Cable Routing."
+            },
+            {
+              "id": "12747",
+              "text": "HTTP Response -> Client Machine -> Internet Hardware Connection."
+            },
+            {
+              "id": "12746",
+              "text": "Server Database -> Browser Layout Rendering -> URL Generation."
+            }
+          ],
+          "correct_option_id": "12745"
+        },
+        {
+          "id": "3189",
+          "text": "A developer wants to build a single text block containing a title that stands out, followed by a sentence. What is the standard structural layout?",
+          "options": [
+            {
+              "id": "12751",
+              "text": "Embed a <p> element directly inside the opening bracket of an <h1> tag."
+            },
+            {
+              "id": "12750",
+              "text": "Place an <h1> to <h6> heading tag first, followed by a separate <p> paragraph tag."
+            },
+            {
+              "id": "12752",
+              "text": "Use a <body> tag for the heading and a <head> tag for the sentence text."
+            },
+            {
+              "id": "12749",
+              "text": "Wrap everything inside a single <p> tag."
+            }
+          ],
+          "correct_option_id": "12750"
+        },
+        {
+          "id": "3190",
+          "text": "If you notice that some text on your webpage is running into an incorrect style layout, which nesting pattern should you audit for errors?",
+          "options": [
+            {
+              "id": "12754",
+              "text": "<div><h1><strong>Main Section Header</strong></h1></div>"
+            },
+            {
+              "id": "12755",
+              "text": "<p><mark><strong>Symmetrically Closed Highlight</strong></strong></p>"
+            },
+            {
+              "id": "12753",
+              "text": "<p><strong><em>Highlighted Text</em></strong></p>"
+            },
+            {
+              "id": "12756",
+              "text": "<p><strong><mark>Overlapped Code Syntax Element</strong></mark></p>"
+            }
+          ],
+          "correct_option_id": "12756"
+        },
+        {
+          "id": "3191",
+          "text": "What will happen if an HTML developer forgets to include a closing tag (e.g., leaving a <strong> tag open)?",
+          "options": [
+            {
+              "id": "12760",
+              "text": "The browser will automatically create a CSS file to fix the problem."
+            },
+            {
+              "id": "12758",
+              "text": "The text formatting or style layout will break and bleed down into the rest of the page elements."
+            },
+            {
+              "id": "12757",
+              "text": "The web browser will instantly crash and throw a fatal compilation error."
+            },
+            {
+              "id": "12759",
+              "text": "The website will fail to download from the web server entirely."
+            }
+          ],
+          "correct_option_id": "12758"
+        },
+        {
+          "id": "3192",
+          "text": "Which components are absolutely necessary to build a valid, modern, and readable HTML document skeleton?",
+          "options": [
+            {
+              "id": "12762",
+              "text": "A long URL address, an interactive JavaScript function, and multiple image source files."
+            },
+            {
+              "id": "12763",
+              "text": "An HTTP Request block, a database server link, and five distinct heading elements."
+            },
+            {
+              "id": "12761",
+              "text": "<!DOCTYPE html> declaration, <html> root wrapper, <head> for metadata, and <body> for viewable content with clean indentation."
+            },
+            {
+              "id": "12764",
+              "text": "Only a <body> tag wrapped around CSS layout variable patterns."
+            }
+          ],
+          "correct_option_id": "12761"
+        },
+        {
+          "id": "3193",
+          "text": "When you enter a website URL in the browser, what is the first step that usually happens",
+          "options": [
+            {
+              "id": "12766",
+              "text": "The browser converts HTML into CSS"
+            },
+            {
+              "id": "12767",
+              "text": "The domain name is translated into an IP address using DNS"
+            },
+            {
+              "id": "12765",
+              "text": "The server sends HTML immediately"
+            },
+            {
+              "id": "12768",
+              "text": "The website is stored in the browser cache"
+            }
+          ],
+          "correct_option_id": "12767"
+        },
+        {
+          "id": "3194",
+          "text": "Which HTML element is used to define a navigation section in a webpage",
+          "options": [
+            {
+              "id": "12769",
+              "text": "div"
+            },
+            {
+              "id": "12772",
+              "text": "header"
+            },
+            {
+              "id": "12771",
+              "text": "nav"
+            },
+            {
+              "id": "12770",
+              "text": "section"
+            }
+          ],
+          "correct_option_id": "12771"
+        },
+        {
+          "id": "3195",
+          "text": "Why is semantic HTML important in web development",
+          "options": [
+            {
+              "id": "12774",
+              "text": "It improves accessibility and SEO understanding"
+            },
+            {
+              "id": "12773",
+              "text": "It makes the page load faster automatically"
+            },
+            {
+              "id": "12776",
+              "text": "It prevents the use of JavaScript"
+            },
+            {
+              "id": "12775",
+              "text": "It replaces the need for CSS"
+            }
+          ],
+          "correct_option_id": "12774"
+        },
+        {
+          "id": "3196",
+          "text": "What is the main purpose of an HTTP request in web communication",
+          "options": [
+            {
+              "id": "12780",
+              "text": "To compile HTML into JavaScript"
+            },
+            {
+              "id": "12778",
+              "text": "To send and receive data between browser and server"
+            },
+            {
+              "id": "12779",
+              "text": "To store website files locally"
+            },
+            {
+              "id": "12777",
+              "text": "To style the webpage"
+            }
+          ],
+          "correct_option_id": "12778"
+        },
+        {
+          "id": "3197",
+          "text": "What does the browser build first after parsing HTML code",
+          "options": [
+            {
+              "id": "12781",
+              "text": "CSS file"
+            },
+            {
+              "id": "12783",
+              "text": "DOM tree"
+            },
+            {
+              "id": "12782",
+              "text": "JavaScript runtime"
+            },
+            {
+              "id": "12784",
+              "text": "Server response"
+            }
+          ],
+          "correct_option_id": "12783"
+        }
+      ]
+    },
+    {
+      "global_week": 9,
+      "month": 3,
+      "week": 1,
+      "name": "Week 9 – Building with HTML Tags and Elements",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "2862",
+          "text": "A developer is building a recipe page and needs to present the cooking steps so that users follow them in sequence. Which HTML list element is the most semantically correct choice?",
+          "options": [
+            {
+              "id": "11443",
+              "text": "<dl> — definition lists are designed for step-based content"
+            },
+            {
+              "id": "11444",
+              "text": "<li> — a single list item can hold all steps as nested content"
+            },
+            {
+              "id": "11442",
+              "text": "<ol> — ordered lists communicate sequence and numbered steps"
+            },
+            {
+              "id": "11441",
+              "text": "<ul> — it is the default list element for all content"
+            }
+          ],
+          "correct_option_id": "11442"
+        },
+        {
+          "id": "2863",
+          "text": "A project folder has: index.html at the root and about/team.html in a subfolder. From index.html, which href value correctly links to team.html using a relative path?",
+          "options": [
+            {
+              "id": "11447",
+              "text": "href='about/team.html'"
+            },
+            {
+              "id": "11445",
+              "text": "href='https://about/team.html'"
+            },
+            {
+              "id": "11446",
+              "text": "href='/team.html'"
+            },
+            {
+              "id": "11448",
+              "text": "href='../team.html'"
+            }
+          ],
+          "correct_option_id": "11447"
+        },
+        {
+          "id": "2864",
+          "text": "A developer adds <img src='logo.png'> to a page but omits the alt attribute. What accessibility problem does this create?",
+          "options": [
+            {
+              "id": "11450",
+              "text": "Screen readers cannot describe the image to visually impaired users — the alt attribute provides the text alternative"
+            },
+            {
+              "id": "11451",
+              "text": "The browser requests the image twice because the alt attribute controls caching"
+            },
+            {
+              "id": "11449",
+              "text": "The image will not render in any browser without an alt attribute"
+            },
+            {
+              "id": "11452",
+              "text": "There is no problem — alt is optional and has no impact on accessibility"
+            }
+          ],
+          "correct_option_id": "11450"
+        },
+        {
+          "id": "2865",
+          "text": "A pricing comparison table has a cell that should span 2 columns. Which attribute and value achieves this?",
+          "options": [
+            {
+              "id": "11455",
+              "text": "colspan='2'"
+            },
+            {
+              "id": "11456",
+              "text": "merge='2'"
+            },
+            {
+              "id": "11454",
+              "text": "span='columns:2'"
+            },
+            {
+              "id": "11453",
+              "text": "width='2'"
+            }
+          ],
+          "correct_option_id": "11455"
+        },
+        {
+          "id": "2866",
+          "text": "A login form collects an email address. The developer uses <input type='text'> instead of <input type='email'>. What is the practical consequence?",
+          "options": [
+            {
+              "id": "11458",
+              "text": "The browser skips built-in email format validation — invalid addresses like 'hello' are accepted without warning"
+            },
+            {
+              "id": "11459",
+              "text": "The form cannot be submitted when using type='text' for emails"
+            },
+            {
+              "id": "11457",
+              "text": "The input will not render — type='email' is required for email fields"
+            },
+            {
+              "id": "11460",
+              "text": "There is no difference — all input types store and send data identically"
+            }
+          ],
+          "correct_option_id": "11458"
+        },
+        {
+          "id": "2867",
+          "text": "A developer needs users to select their country from a list. Which combination of HTML elements is the correct approach?",
+          "options": [
+            {
+              "id": "11463",
+              "text": "<dropdown> with <item> children"
+            },
+            {
+              "id": "11464",
+              "text": "<input type='dropdown'> with a datalist attribute"
+            },
+            {
+              "id": "11461",
+              "text": "<input type='list'> with <option> children"
+            },
+            {
+              "id": "11462",
+              "text": "<select> containing <option> elements for each country"
+            }
+          ],
+          "correct_option_id": "11462"
+        },
+        {
+          "id": "2868",
+          "text": "A developer wants to add a visible title above a table that is semantically associated with it. Which HTML approach is correct?",
+          "options": [
+            {
+              "id": "11466",
+              "text": "<caption> placed as the first child inside <table> — it is the dedicated element for table titles"
+            },
+            {
+              "id": "11465",
+              "text": "<h2> placed immediately before the <table> opening tag — headings associate with the next element automatically"
+            },
+            {
+              "id": "11468",
+              "text": "<label for='table1'> placed outside the table with a matching id"
+            },
+            {
+              "id": "11467",
+              "text": "<title> placed inside <table> — the title element works for both documents and tables"
+            }
+          ],
+          "correct_option_id": "11466"
+        },
+        {
+          "id": "2869",
+          "text": "An image tag reads: <img src='photo.jpg' width='800'>. The original photo is 400px wide. What visual problem occurs on screen?",
+          "options": [
+            {
+              "id": "11471",
+              "text": "The browser ignores the width attribute and renders the image at its natural size"
+            },
+            {
+              "id": "11472",
+              "text": "The image is cropped to 800px and the rest is discarded"
+            },
+            {
+              "id": "11469",
+              "text": "The image is hidden because the width exceeds the viewport"
+            },
+            {
+              "id": "11470",
+              "text": "The image is stretched horizontally and appears distorted because the height is not adjusted proportionally"
+            }
+          ],
+          "correct_option_id": "11470"
+        },
+        {
+          "id": "2870",
+          "text": "A student wraps an <img> tag inside an <a> tag. What is the result in the browser?",
+          "options": [
+            {
+              "id": "11473",
+              "text": "The code is invalid — only text may appear between <a> tags"
+            },
+            {
+              "id": "11474",
+              "text": "The image becomes a clickable link that navigates to the href destination"
+            },
+            {
+              "id": "11475",
+              "text": "The image disappears — <a> suppresses non-text children"
+            },
+            {
+              "id": "11476",
+              "text": "The image renders but the link only activates on the alt text area"
+            }
+          ],
+          "correct_option_id": "11474"
+        },
+        {
+          "id": "2871",
+          "text": "A student nests an <ol> inside a <li> of a <ul>. The inner <ol> lists three substeps. Which statement correctly describes this markup pattern?",
+          "options": [
+            {
+              "id": "11477",
+              "text": "It is invalid HTML — list elements cannot be nested inside each other"
+            },
+            {
+              "id": "11480",
+              "text": "It is valid but only if the nested list has exactly the same number of items as the outer list"
+            },
+            {
+              "id": "11478",
+              "text": "It is valid nested list markup — an <ol> or <ul> may appear as a direct child of <li>"
+            },
+            {
+              "id": "11479",
+              "text": "It is valid only if the outer list is also an <ol>"
+            }
+          ],
+          "correct_option_id": "11478"
+        }
+      ]
+    },
+    {
+      "global_week": 10,
+      "month": 3,
+      "week": 2,
+      "name": "Week 10 – CSS: Making Web Pages Look Great",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "3150",
+          "text": "What is the main difference between HTML and CSS roles on a web page?",
+          "options": [
+            {
+              "id": "12593",
+              "text": "HTML controls data storage; CSS handles data transfer."
+            },
+            {
+              "id": "12594",
+              "text": "HTML defines content and structure; CSS handles presentation and styling."
+            },
+            {
+              "id": "12595",
+              "text": "HTML makes pages interactive; CSS updates databases."
+            },
+            {
+              "id": "12596",
+              "text": "They perform identical functions within a web page script."
+            }
+          ],
+          "correct_option_id": "12594"
+        },
+        {
+          "id": "3151",
+          "text": "Which of the following is the correct code snippet to connect an external stylesheet named \"styles.css\"?",
+          "options": [
+            {
+              "id": "12598",
+              "text": "<link rel=\"stylesheet\" href=\"styles.css\">"
+            },
+            {
+              "id": "12600",
+              "text": "<link source=\"styles.css\">"
+            },
+            {
+              "id": "12599",
+              "text": "<script href=\"styles.css\">"
+            },
+            {
+              "id": "12597",
+              "text": "<style src=\"styles.css\">"
+            }
+          ],
+          "correct_option_id": "12598"
+        },
+        {
+          "id": "3152",
+          "text": "A student wants to change both the background color to white and the text color to brown. Which code block achieves this?",
+          "options": [
+            {
+              "id": "12603",
+              "text": "p { color: brown; background-color: white; }"
+            },
+            {
+              "id": "12604",
+              "text": "p { color: white; background-color: brown; }"
+            },
+            {
+              "id": "12602",
+              "text": "p { font-color: brown; background: white; }"
+            },
+            {
+              "id": "12601",
+              "text": "p { text: brown; bg: white; }"
+            }
+          ],
+          "correct_option_id": "12603"
+        },
+        {
+          "id": "3153",
+          "text": "Which CSS properties control text alignment horizontally and the vertical line spacing spacing respectively?",
+          "options": [
+            {
+              "id": "12608",
+              "text": "align-text and spacing-vertical"
+            },
+            {
+              "id": "12607",
+              "text": "font-weight and text-decoration"
+            },
+            {
+              "id": "12606",
+              "text": "text-align and line-height"
+            },
+            {
+              "id": "12605",
+              "text": "text-position and font-size"
+            }
+          ],
+          "correct_option_id": "12606"
+        },
+        {
+          "id": "3154",
+          "text": "If a CSS file contains the selector .main-title, which matching HTML attribute is required to activate that rule?",
+          "options": [
+            {
+              "id": "12610",
+              "text": "class=\"main-title\""
+            },
+            {
+              "id": "12609",
+              "text": "id=\"main-title\""
+            },
+            {
+              "id": "12612",
+              "text": "selector=\"main-title\""
+            },
+            {
+              "id": "12611",
+              "text": "tag=\"main-title\""
+            }
+          ],
+          "correct_option_id": "12610"
+        },
+        {
+          "id": "3155",
+          "text": "Which CSS property is used to change the background color of an element?",
+          "options": [
+            {
+              "id": "12614",
+              "text": "background-color"
+            },
+            {
+              "id": "12613",
+              "text": "color"
+            },
+            {
+              "id": "12615",
+              "text": "font-color"
+            },
+            {
+              "id": "12616",
+              "text": "text-color"
+            }
+          ],
+          "correct_option_id": "12614"
+        },
+        {
+          "id": "3156",
+          "text": "Where should the <link> tag that references an external CSS file typically be placed?",
+          "options": [
+            {
+              "id": "12620",
+              "text": "After the closing </html> tag"
+            },
+            {
+              "id": "12617",
+              "text": "Inside the <body> element"
+            },
+            {
+              "id": "12618",
+              "text": "Inside the <footer> element"
+            },
+            {
+              "id": "12619",
+              "text": "Inside the <head> element"
+            }
+          ],
+          "correct_option_id": "12619"
+        },
+        {
+          "id": "3157",
+          "text": "Which CSS property is used to change the font of text?",
+          "options": [
+            {
+              "id": "12622",
+              "text": "font-family"
+            },
+            {
+              "id": "12623",
+              "text": "font-type"
+            },
+            {
+              "id": "12624",
+              "text": "text-font"
+            },
+            {
+              "id": "12621",
+              "text": "text-style"
+            }
+          ],
+          "correct_option_id": "12622"
+        },
+        {
+          "id": "3158",
+          "text": "Which HTML element can have multiple classes assigned to it?",
+          "options": [
+            {
+              "id": "12627",
+              "text": "Any HTML element"
+            },
+            {
+              "id": "12625",
+              "text": "Only <div> elements"
+            },
+            {
+              "id": "12626",
+              "text": "Only heading elements"
+            },
+            {
+              "id": "12628",
+              "text": "Only <p> elements"
+            }
+          ],
+          "correct_option_id": "12627"
+        },
+        {
+          "id": "3159",
+          "text": "Which selector is used to target an element with the ID header?",
+          "options": [
+            {
+              "id": "12629",
+              "text": ".header"
+            },
+            {
+              "id": "12630",
+              "text": "*header"
+            },
+            {
+              "id": "12631",
+              "text": "#header"
+            },
+            {
+              "id": "12632",
+              "text": "header."
+            }
+          ],
+          "correct_option_id": "12631"
+        }
+      ]
+    },
+    {
+      "global_week": 11,
+      "month": 3,
+      "week": 3,
+      "name": "Week 11 - Introduction to Cybersecurity & Core Principles",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "3341",
+          "text": "Smart watches and smart televisions that connect to the internet belong to which category?",
+          "options": [
+            {
+              "id": "13357",
+              "text": "A firewall"
+            },
+            {
+              "id": "13360",
+              "text": "A type of malware"
+            },
+            {
+              "id": "13358",
+              "text": "The CIA Triad"
+            },
+            {
+              "id": "13359",
+              "text": "The Internet of Things (IoT)"
+            }
+          ],
+          "correct_option_id": "13359"
+        },
+        {
+          "id": "3342",
+          "text": "Which three pillars must work together for protection to be effective?",
+          "options": [
+            {
+              "id": "13363",
+              "text": "Email, chat, and video"
+            },
+            {
+              "id": "13364",
+              "text": "People, processes, and technology"
+            },
+            {
+              "id": "13362",
+              "text": "Phones, tablets, and laptops"
+            },
+            {
+              "id": "13361",
+              "text": "Speed, colour, and size"
+            }
+          ],
+          "correct_option_id": "13364"
+        },
+        {
+          "id": "3343",
+          "text": "If a hospital system goes down and doctors cannot reach patient records, which need has mainly failed?",
+          "options": [
+            {
+              "id": "13366",
+              "text": "A career track"
+            },
+            {
+              "id": "13368",
+              "text": "A digital footprint"
+            },
+            {
+              "id": "13365",
+              "text": "Business continuity"
+            },
+            {
+              "id": "13367",
+              "text": "Digital transformation"
+            }
+          ],
+          "correct_option_id": "13365"
+        },
+        {
+          "id": "3344",
+          "text": "What do the letters in the CIA Triad stand for?",
+          "options": [
+            {
+              "id": "13370",
+              "text": "Caution, Inspection, Alarm"
+            },
+            {
+              "id": "13371",
+              "text": "Computer, Internet, Account"
+            },
+            {
+              "id": "13369",
+              "text": "Confidentiality, Integrity, Availability"
+            },
+            {
+              "id": "13372",
+              "text": "Control, Identity, Access"
+            }
+          ],
+          "correct_option_id": "13369"
+        },
+        {
+          "id": "3345",
+          "text": "Encryption and passwords are used mainly to protect which principle?",
+          "options": [
+            {
+              "id": "13373",
+              "text": "Availability"
+            },
+            {
+              "id": "13375",
+              "text": "Business continuity"
+            },
+            {
+              "id": "13374",
+              "text": "Confidentiality"
+            },
+            {
+              "id": "13376",
+              "text": "Recovery"
+            }
+          ],
+          "correct_option_id": "13374"
+        },
+        {
+          "id": "3346",
+          "text": "Recording who logged in and what they did, in a log, supports which concept?",
+          "options": [
+            {
+              "id": "13380",
+              "text": "Accountability"
+            },
+            {
+              "id": "13377",
+              "text": "Availability"
+            },
+            {
+              "id": "13379",
+              "text": "Encryption"
+            },
+            {
+              "id": "13378",
+              "text": "Reconnaissance"
+            }
+          ],
+          "correct_option_id": "13380"
+        },
+        {
+          "id": "3347",
+          "text": "Removing an application that you no longer use helps to:",
+          "options": [
+            {
+              "id": "13384",
+              "text": "Break the firewall"
+            },
+            {
+              "id": "13382",
+              "text": "Increase the attack surface"
+            },
+            {
+              "id": "13383",
+              "text": "Reduce the attack surface"
+            },
+            {
+              "id": "13381",
+              "text": "Steal data"
+            }
+          ],
+          "correct_option_id": "13383"
+        },
+        {
+          "id": "3348",
+          "text": "Which professional continuously monitors systems in order to detect attacks early?",
+          "options": [
+            {
+              "id": "13387",
+              "text": "A Cloud Security Engineer"
+            },
+            {
+              "id": "13386",
+              "text": "A GRC Officer"
+            },
+            {
+              "id": "13388",
+              "text": "An Application Security developer"
+            },
+            {
+              "id": "13385",
+              "text": "A SOC Analyst"
+            }
+          ],
+          "correct_option_id": "13385"
+        },
+        {
+          "id": "3349",
+          "text": "A paper file locked inside a drawer is an example of:",
+          "options": [
+            {
+              "id": "13391",
+              "text": "A digital footprint"
+            },
+            {
+              "id": "13390",
+              "text": "A network attack"
+            },
+            {
+              "id": "13389",
+              "text": "Cybersecurity"
+            },
+            {
+              "id": "13392",
+              "text": "Information security"
+            }
+          ],
+          "correct_option_id": "13392"
+        },
+        {
+          "id": "3350",
+          "text": "A company customer list and financial records are an example of:",
+          "options": [
+            {
+              "id": "13396",
+              "text": "A digital footprint"
+            },
+            {
+              "id": "13394",
+              "text": "A threat actor"
+            },
+            {
+              "id": "13395",
+              "text": "Organizational data"
+            },
+            {
+              "id": "13393",
+              "text": "Personal data"
+            }
+          ],
+          "correct_option_id": "13395"
+        }
+      ]
+    },
+    {
+      "global_week": 12,
+      "month": 3,
+      "week": 4,
+      "name": "Week 12 - Threat Landscape and Attack Vectors",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "3363",
+          "text": "The network, routers, cables, and internet connection together form which asset type?",
+          "options": [
+            {
+              "id": "13445",
+              "text": "Applications"
+            },
+            {
+              "id": "13447",
+              "text": "Data"
+            },
+            {
+              "id": "13448",
+              "text": "Human assets"
+            },
+            {
+              "id": "13446",
+              "text": "Infrastructure"
+            }
+          ],
+          "correct_option_id": "13446"
+        },
+        {
+          "id": "3364",
+          "text": "A weakness such as a weak password is called a:",
+          "options": [
+            {
+              "id": "13449",
+              "text": "Control"
+            },
+            {
+              "id": "13451",
+              "text": "Risk"
+            },
+            {
+              "id": "13452",
+              "text": "Threat"
+            },
+            {
+              "id": "13450",
+              "text": "Vulnerability"
+            }
+          ],
+          "correct_option_id": "13450"
+        },
+        {
+          "id": "3365",
+          "text": "Risk increases when:",
+          "options": [
+            {
+              "id": "13456",
+              "text": "All vulnerabilities have been closed"
+            },
+            {
+              "id": "13455",
+              "text": "A vulnerability and a threat exist at the same time"
+            },
+            {
+              "id": "13454",
+              "text": "Passwords are very strong"
+            },
+            {
+              "id": "13453",
+              "text": "There is no attacker anywhere"
+            }
+          ],
+          "correct_option_id": "13455"
+        },
+        {
+          "id": "3366",
+          "text": "Attackers supported by governments with political or military aims are called:",
+          "options": [
+            {
+              "id": "13458",
+              "text": "Hacktivists"
+            },
+            {
+              "id": "13457",
+              "text": "Insider threats"
+            },
+            {
+              "id": "13459",
+              "text": "Nation-state actors"
+            },
+            {
+              "id": "13460",
+              "text": "Script kiddies"
+            }
+          ],
+          "correct_option_id": "13459"
+        },
+        {
+          "id": "3367",
+          "text": "A hacktivist is mainly motivated by:",
+          "options": [
+            {
+              "id": "13463",
+              "text": "A cause or a message they believe in"
+            },
+            {
+              "id": "13461",
+              "text": "A government salary"
+            },
+            {
+              "id": "13464",
+              "text": "Money only"
+            },
+            {
+              "id": "13462",
+              "text": "Repairing computers"
+            }
+          ],
+          "correct_option_id": "13463"
+        },
+        {
+          "id": "3368",
+          "text": "Leaving a hidden back door so the attacker can return later is which stage of the attack lifecycle?",
+          "options": [
+            {
+              "id": "13468",
+              "text": "Exfiltration"
+            },
+            {
+              "id": "13467",
+              "text": "Initial access"
+            },
+            {
+              "id": "13466",
+              "text": "Persistence"
+            },
+            {
+              "id": "13465",
+              "text": "Reconnaissance"
+            }
+          ],
+          "correct_option_id": "13466"
+        },
+        {
+          "id": "3369",
+          "text": "A text message containing a harmful link is which kind of attack?",
+          "options": [
+            {
+              "id": "13472",
+              "text": "A worm"
+            },
+            {
+              "id": "13471",
+              "text": "DDoS"
+            },
+            {
+              "id": "13469",
+              "text": "Smishing"
+            },
+            {
+              "id": "13470",
+              "text": "Vishing"
+            }
+          ],
+          "correct_option_id": "13469"
+        },
+        {
+          "id": "3370",
+          "text": "Inventing a fake story or identity in order to win someone trust is called:",
+          "options": [
+            {
+              "id": "13475",
+              "text": "A backup"
+            },
+            {
+              "id": "13474",
+              "text": "A firewall"
+            },
+            {
+              "id": "13476",
+              "text": "Encryption"
+            },
+            {
+              "id": "13473",
+              "text": "Pretexting"
+            }
+          ],
+          "correct_option_id": "13473"
+        },
+        {
+          "id": "3371",
+          "text": "A program that secretly watches you and records what you type is:",
+          "options": [
+            {
+              "id": "13479",
+              "text": "A backup"
+            },
+            {
+              "id": "13480",
+              "text": "A firewall"
+            },
+            {
+              "id": "13478",
+              "text": "Antivirus"
+            },
+            {
+              "id": "13477",
+              "text": "Spyware"
+            }
+          ],
+          "correct_option_id": "13477"
+        },
+        {
+          "id": "3372",
+          "text": "What is the best protection against packet sniffing on a network?",
+          "options": [
+            {
+              "id": "13482",
+              "text": "Encryption"
+            },
+            {
+              "id": "13484",
+              "text": "Posting more information online"
+            },
+            {
+              "id": "13483",
+              "text": "Removing the firewall"
+            },
+            {
+              "id": "13481",
+              "text": "Using a weaker password"
+            }
+          ],
+          "correct_option_id": "13482"
+        }
+      ]
+    },
+    {
+      "global_week": 13,
+      "month": 4,
+      "week": 1,
+      "name": "Week 13 - Defending Organizations Against Cyber Attacks",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "3373",
+          "text": "Reducing risk to the lowest reasonable level, rather than removing it completely, is the goal of:",
+          "options": [
+            {
+              "id": "13487",
+              "text": "Cyber attacks"
+            },
+            {
+              "id": "13485",
+              "text": "Malware"
+            },
+            {
+              "id": "13486",
+              "text": "Security controls"
+            },
+            {
+              "id": "13488",
+              "text": "Threat actors"
+            }
+          ],
+          "correct_option_id": "13486"
+        },
+        {
+          "id": "3374",
+          "text": "A castle protected by a moat, a wall, guards, and a gate illustrates which principle?",
+          "options": [
+            {
+              "id": "13492",
+              "text": "A single point of failure"
+            },
+            {
+              "id": "13491",
+              "text": "Defence in depth"
+            },
+            {
+              "id": "13490",
+              "text": "Digital transformation"
+            },
+            {
+              "id": "13489",
+              "text": "Risk acceptance"
+            }
+          ],
+          "correct_option_id": "13491"
+        },
+        {
+          "id": "3375",
+          "text": "A general rule that states what is required, without giving the steps, is a:",
+          "options": [
+            {
+              "id": "13494",
+              "text": "Firewall"
+            },
+            {
+              "id": "13493",
+              "text": "Policy"
+            },
+            {
+              "id": "13495",
+              "text": "Procedure"
+            },
+            {
+              "id": "13496",
+              "text": "Standard"
+            }
+          ],
+          "correct_option_id": "13493"
+        },
+        {
+          "id": "3376",
+          "text": "Teaching employees to recognise phishing emails is which type of control?",
+          "options": [
+            {
+              "id": "13500",
+              "text": "A backup"
+            },
+            {
+              "id": "13499",
+              "text": "A firewall"
+            },
+            {
+              "id": "13498",
+              "text": "An access badge"
+            },
+            {
+              "id": "13497",
+              "text": "Security awareness training"
+            }
+          ],
+          "correct_option_id": "13497"
+        },
+        {
+          "id": "3377",
+          "text": "A tool that controls the connections entering and leaving a network is a:",
+          "options": [
+            {
+              "id": "13503",
+              "text": "A backup"
+            },
+            {
+              "id": "13504",
+              "text": "A camera"
+            },
+            {
+              "id": "13501",
+              "text": "A password policy"
+            },
+            {
+              "id": "13502",
+              "text": "Firewall"
+            }
+          ],
+          "correct_option_id": "13502"
+        },
+        {
+          "id": "3378",
+          "text": "Requiring a code sent to your phone in addition to your password is an example of:",
+          "options": [
+            {
+              "id": "13506",
+              "text": "A backup"
+            },
+            {
+              "id": "13508",
+              "text": "A firewall"
+            },
+            {
+              "id": "13507",
+              "text": "Multi-Factor Authentication (MFA)"
+            },
+            {
+              "id": "13505",
+              "text": "Packet sniffing"
+            }
+          ],
+          "correct_option_id": "13507"
+        },
+        {
+          "id": "3379",
+          "text": "A card that opens only the doors you are permitted to enter is an:",
+          "options": [
+            {
+              "id": "13512",
+              "text": "Access badge"
+            },
+            {
+              "id": "13511",
+              "text": "Antivirus"
+            },
+            {
+              "id": "13510",
+              "text": "A policy"
+            },
+            {
+              "id": "13509",
+              "text": "A SIEM"
+            }
+          ],
+          "correct_option_id": "13512"
+        },
+        {
+          "id": "3380",
+          "text": "A control that acts before an attack in order to stop it is called:",
+          "options": [
+            {
+              "id": "13514",
+              "text": "Corrective"
+            },
+            {
+              "id": "13515",
+              "text": "Detective"
+            },
+            {
+              "id": "13516",
+              "text": "Preventive"
+            },
+            {
+              "id": "13513",
+              "text": "Recovery"
+            }
+          ],
+          "correct_option_id": "13516"
+        },
+        {
+          "id": "3381",
+          "text": "An automatic notification sent when something suspicious is found is an:",
+          "options": [
+            {
+              "id": "13518",
+              "text": "A backup"
+            },
+            {
+              "id": "13517",
+              "text": "A firewall"
+            },
+            {
+              "id": "13520",
+              "text": "Alert"
+            },
+            {
+              "id": "13519",
+              "text": "A policy"
+            }
+          ],
+          "correct_option_id": "13520"
+        },
+        {
+          "id": "3382",
+          "text": "The central team that monitors, detects, and responds to threats around the clock is the:",
+          "options": [
+            {
+              "id": "13524",
+              "text": "Security Operations Center (SOC)"
+            },
+            {
+              "id": "13522",
+              "text": "The GRC team"
+            },
+            {
+              "id": "13523",
+              "text": "The marketing team"
+            },
+            {
+              "id": "13521",
+              "text": "The printer help desk"
+            }
+          ],
+          "correct_option_id": "13524"
+        }
+      ]
+    },
+    {
+      "global_week": 14,
+      "month": 4,
+      "week": 2,
+      "name": "Week 14: Digital Arts Foundations",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "3828",
+          "text": "What is the purpose of visual hierarchy?",
+          "options": [
+            {
+              "id": "15306",
+              "text": "Guide the viewer's attention"
+            },
+            {
+              "id": "15307",
+              "text": "Increase file storage"
+            },
+            {
+              "id": "15305",
+              "text": "Randomize layout"
+            },
+            {
+              "id": "15308",
+              "text": "Reduce image quality"
+            }
+          ],
+          "correct_option_id": "15306"
+        },
+        {
+          "id": "3829",
+          "text": "Which industry relies heavily on digital artists?",
+          "options": [
+            {
+              "id": "15309",
+              "text": "Agriculture"
+            },
+            {
+              "id": "15312",
+              "text": "Civil engineering"
+            },
+            {
+              "id": "15310",
+              "text": "Game development"
+            },
+            {
+              "id": "15311",
+              "text": "Mining"
+            }
+          ],
+          "correct_option_id": "15310"
+        },
+        {
+          "id": "3830",
+          "text": "Which element makes an object appear three-dimensional?",
+          "options": [
+            {
+              "id": "15313",
+              "text": "Form"
+            },
+            {
+              "id": "15315",
+              "text": "Line"
+            },
+            {
+              "id": "15314",
+              "text": "Shape"
+            },
+            {
+              "id": "15316",
+              "text": "Texture"
+            }
+          ],
+          "correct_option_id": "15313"
+        },
+        {
+          "id": "3831",
+          "text": "Which step usually comes after creating a prototype?",
+          "options": [
+            {
+              "id": "15317",
+              "text": "Collect feedback"
+            },
+            {
+              "id": "15319",
+              "text": "Delete the design"
+            },
+            {
+              "id": "15318",
+              "text": "Publish immediately"
+            },
+            {
+              "id": "15320",
+              "text": "Skip testing"
+            }
+          ],
+          "correct_option_id": "15317"
+        },
+        {
+          "id": "3832",
+          "text": "What does value describe in art?",
+          "options": [
+            {
+              "id": "15322",
+              "text": "Lightness and darkness"
+            },
+            {
+              "id": "15324",
+              "text": "Object size"
+            },
+            {
+              "id": "15321",
+              "text": "Object weight"
+            },
+            {
+              "id": "15323",
+              "text": "Surface material"
+            }
+          ],
+          "correct_option_id": "15322"
+        },
+        {
+          "id": "3833",
+          "text": "Which principle helps create a clear focal point?",
+          "options": [
+            {
+              "id": "15325",
+              "text": "Emphasis"
+            },
+            {
+              "id": "15327",
+              "text": "Proximity"
+            },
+            {
+              "id": "15326",
+              "text": "Repetition"
+            },
+            {
+              "id": "15328",
+              "text": "Rhythm"
+            }
+          ],
+          "correct_option_id": "15325"
+        },
+        {
+          "id": "3834",
+          "text": "Why is shape language important?",
+          "options": [
+            {
+              "id": "15331",
+              "text": "It changes screen resolution"
+            },
+            {
+              "id": "15330",
+              "text": "It communicates meaning and emotion"
+            },
+            {
+              "id": "15329",
+              "text": "It increases file size"
+            },
+            {
+              "id": "15332",
+              "text": "It speeds up rendering"
+            }
+          ],
+          "correct_option_id": "15330"
+        },
+        {
+          "id": "3835",
+          "text": "What is the primary goal of design?",
+          "options": [
+            {
+              "id": "15335",
+              "text": "Copy existing artwork"
+            },
+            {
+              "id": "15336",
+              "text": "Decorate without purpose"
+            },
+            {
+              "id": "15333",
+              "text": "Express personal feelings"
+            },
+            {
+              "id": "15334",
+              "text": "Solve a communication problem"
+            }
+          ],
+          "correct_option_id": "15334"
+        },
+        {
+          "id": "3836",
+          "text": "Which composition technique helps create a balanced layout?",
+          "options": [
+            {
+              "id": "15339",
+              "text": "Ignoring alignment"
+            },
+            {
+              "id": "15340",
+              "text": "Overlapping everything"
+            },
+            {
+              "id": "15338",
+              "text": "Random placement"
+            },
+            {
+              "id": "15337",
+              "text": "Visual hierarchy"
+            }
+          ],
+          "correct_option_id": "15337"
+        },
+        {
+          "id": "3837",
+          "text": "Which statement best defines digital art?",
+          "options": [
+            {
+              "id": "15342",
+              "text": "Art created using digital devices and software"
+            },
+            {
+              "id": "15341",
+              "text": "Art made only with cameras"
+            },
+            {
+              "id": "15343",
+              "text": "Art painted only on canvas"
+            },
+            {
+              "id": "15344",
+              "text": "Art printed on paper"
+            }
+          ],
+          "correct_option_id": "15342"
+        }
+      ]
+    }
+  ]
+}
